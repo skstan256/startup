@@ -1,5 +1,9 @@
 # Notes for 260
 
+## Startup Misc.
+- You'll have less than 4GB of space to store data in your database
+    - Check if local storage is a possibility
+
 ## GitHub Assignment:
 
 When resolving a merge conflict, remember to save the file after you choose the resolution! Then use `git add` plus the filename, then commit, then push (I think?).
@@ -28,3 +32,5 @@ Basically, avoid merge conflicts like the plague...
     - Push notifications
     - The server can tell you things, instead of just you requesting things and the server sending it
     - Sending reminders at a certain time is an example of WebSocket!
+ 
+
