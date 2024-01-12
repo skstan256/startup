@@ -3,6 +3,8 @@
 ## Startup Misc.
 - You'll have less than 4GB of space to store data in your database
     - Check if local storage is a possibility
+- Use basic implementation, basic data structures, basic control logic!
+- Every other day, 3-5 commits or more per session
 
 ## GitHub Assignment:
 
