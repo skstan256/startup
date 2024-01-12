@@ -1,3 +1,0 @@
-# startup
-
-TODO: write README
