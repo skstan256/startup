@@ -1,3 +1,3 @@
 # startup
 
-Let's create a conflict!
+TODO: write README
