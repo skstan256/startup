@@ -1,3 +1,3 @@
 # startup
 
-[Link to notes page](README.md)
+[Link to notes page](notes.md)
