@@ -13,3 +13,6 @@ Basically, avoid merge conflicts like the plague...
 - Peers
 - Teaching Assistants - there's a schedule, and a specific TA will grade your stuff
 - Instructors
+
+## Discord
+- RubberDuck in the duckpond - a bot that will answer some questions
