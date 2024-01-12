@@ -6,4 +6,10 @@ When resolving a merge conflict, remember to save the file after you choose the 
 
 Basically, avoid merge conflicts like the plague...
 
-The markdown reference page is [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## Asking Questions - Order of Authority
+- Yourself (especially when you're stuck and debugging)
+    - Figure out how to phrase your question - nobody will be able to help you anyway until you do
+- Instructions, automated sources (internet, etc.)
+- Peers
+- Teaching Assistants - there's a schedule, and a specific TA will grade your stuff
+- Instructors
