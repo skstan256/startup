@@ -1,5 +1,3 @@
 # startup
 
-TODO: write README
-
-Test after switching directory
+[Link to notes page](README.md)
