@@ -8,11 +8,11 @@ Our brains have too many things to keep track of. Mix in ADHD, executive functio
 Users can create an account to store and keep track of their projects.
 ### Projects
 #### Thought Log
-Record your progress or capture moments of inspiration! Keep track of thoughts in text chain style entries. Edit or delete entries. This is a way to keep track of your thought process.
+Record your thoughts in text chain style entries that can be edited or deleted. This is a way to keep track of your thought process.
 #### To-Do List
-Keep track of tasks on the fly without navigating to another website (and maybe getting distracted in the process).
+Keep track of tasks on the fly without navigating to another website (and maybe getting distracted in the process). A standard, simple to-do list.
 #### Reminders
-Nudge yourself to do tasks after a certain amount of time, or when you end your work session!
+Nudge yourself to do tasks after a certain amount of time, or when you end your work session. 
 
 ## Representation of All Technologies
 
