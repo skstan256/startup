@@ -5,18 +5,20 @@ Our brains have too many things to keep track of. Mix in ADHD, executive functio
 
 ## Description of Key Features
 ### Account
-Users can create an account to store and keep track of their projects.
+Users can create an account to store and access their projects.
 ### Projects
 #### Thought Log
-Record your thoughts in text chain style entries that can be edited or deleted. This is a way to keep track of your thought process.
+Record your thoughts in text chain style entries that can be edited or deleted. This is a way to keep track of your thought process, mind dump, rubber duck, etc.
 #### To-Do List
-Keep track of tasks on the fly without navigating to another website (and maybe getting distracted in the process). A standard, simple to-do list.
+A standard, simple to-do list. Keep track of tasks on the fly without navigating to another website (and maybe getting distracted in the process).
 #### Reminders
-Nudge yourself to do tasks after a certain amount of time, or when you end your work session. 
+Nudge yourself to do tasks after a certain amount of time, or when you pause/end your work session. This can also be used for a pomodoro timer.
 
 ## Representation of All Technologies
 
+
 ## Sketches
+# TODO - REDO HOW THEY'RE EMBEDDED
 ![IMG_1156](https://github.com/skstan256/startup/assets/83431817/0d0cf56c-6aa0-4d95-b17d-c61fc668518e)
 ![IMG_1157](https://github.com/skstan256/startup/assets/83431817/a394e4a8-f85f-4a45-9da6-977c933d0627)
 
