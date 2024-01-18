@@ -25,15 +25,15 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 - Projects are stored persistently
 
 ## Representation of All Technologies
-- **HTML** - 
+- **HTML** - The structure of the webpages, such as the login, welcome, and project pages
 - **CSS** - Application styling on all pages to make the layout aesthetically pleasing and easy to navigate
-- **JavaScript** - In the int
-- **Service** -
-- **Database/Login** -
-- **Authentication** -
-- **WebSocket** -
-- **React** -
-- **External API** - 
+- **JavaScript** - Provides the interactive elements of the pages, such as the add, edit, and delete buttons
+- **Service** - There will be web service endpoints for login, retrieving projects from the database, etc.
+- **Database/Login** - Login credentials and users' projects are stored securely stored in a database
+- **Authentication** - The user will be authenticated with login credientials, and can only see/modify projects while logged in
+- **WebSocket** - Pushes notifications about reminders the user created
+- **React** - The startup will be ported to React
+- **External API** - The welcome page will display the next upcoming U.S. holiday, which will be fetched from an external API
 
 ## Sketches
 ![Login and Welcome Pages Sketch](sketch_1.jpg)
