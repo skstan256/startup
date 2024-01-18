@@ -28,7 +28,6 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 TODO: must call a server that's not yours - ex. Simon displays a random image and quote, get the weather - get U.S. holidays?
 
 ## Sketches
-# TODO - REDO HOW THEY'RE EMBEDDED
 ![IMG_1156](https://github.com/skstan256/startup/assets/83431817/0d0cf56c-6aa0-4d95-b17d-c61fc668518e)
 ![IMG_1157](https://github.com/skstan256/startup/assets/83431817/a394e4a8-f85f-4a45-9da6-977c933d0627)
 
