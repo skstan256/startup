@@ -25,11 +25,19 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 - Projects are stored persistently
 
 ## Representation of All Technologies
-TODO: must call a server that's not yours - ex. Simon displays a random image and quote, get the weather - get U.S. holidays?
+- **HTML** - 
+- **CSS** - Application styling on all pages to make the layout aesthetically pleasing and easy to navigate
+- **JavaScript** - In the int
+- **Service** -
+- **Database/Login** -
+- **Authentication** -
+- **WebSocket** -
+- **React** -
+- **External API** - 
 
 ## Sketches
-![Login and Welcome Pages](sketch_1.jpg)
-![Project Page and Tabs](sketch_2.jpg)
+![Login and Welcome Pages Sketch](sketch_1.jpg)
+![Project Page and Tabs Sketch](sketch_2.jpg)
 
 
 
