@@ -50,3 +50,9 @@ Basically, avoid merge conflicts like the plague...
 - Runs on a bunch of different things - in fact, on pretty much anything
 - It's engrained into almost everything, backwards compatible (which kinda made it screwed up, but it would have screwed up more things if it wasn't)
 
+## Technology Stacks
+- All the applications you use - ex. React, MongoDB, etc.
+
+FINISH THE SETUP - ELASTIC IP ADDRESS
+LEAVE THE SERVER RUNNING SO THE TAS CAN LOOK AT IT
+
