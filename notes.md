@@ -53,6 +53,7 @@ Basically, avoid merge conflicts like the plague...
 ## Technology Stacks
 - All the applications you use - ex. React, MongoDB, etc.
 
-FINISH THE SETUP - ELASTIC IP ADDRESS
-LEAVE THE SERVER RUNNING SO THE TAS CAN LOOK AT IT
+## SSH Stuff
+Public IP Address: 184.72.128.199
+ssh -i ~/FILE_NAME_HERE.pem ubuntu@184.72.128.199
 
