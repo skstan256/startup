@@ -53,6 +53,24 @@ Basically, avoid merge conflicts like the plague...
 ## Technology Stacks
 - All the applications you use - ex. React, MongoDB, etc.
 
+## Operating Systems
+- The web runs on Linux!
+
+## The Console
+- AKA Terminal, shell, command module
+- GUIs are nice, but slow
+- The best programmers love the console!
+- Does two main things: navigate your disk (access your files), and run console applications
+- Mac -- get warp
+- on warp - use # to ask questions!
+
+## Commands:
+- echo: output the parameters of the command
+- cd: change directory
+- mkdir: make directory
+- get full list on slides
+- use | to chain commands together
+
 ## SSH Stuff
 Public IP Address: 184.72.128.199
 ssh -i ~/FILE_NAME_HERE.pem ubuntu@184.72.128.199
