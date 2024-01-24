@@ -64,6 +64,10 @@ Basically, avoid merge conflicts like the plague...
 - Mac -- get warp
 - on warp - use # to ask questions!
 
+Two Extensions to Download for VS Code:
+- Live Server
+- GitLens
+
 ## Commands:
 - echo: output the parameters of the command
 - cd: change directory
