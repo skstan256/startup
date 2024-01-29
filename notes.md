@@ -2,6 +2,7 @@
 
 ## Startup Misc.
 - FOR EVERY DEPLOY, HAVE THINGS LISTED IN THE README, SAD FACE IF YOU COULDN'T GET IT TO WORK
+- If there's an html element that does what you need it to do, use it!!
 - You can copy code as long as you know what it does
 - Never put something in your code that you don't understand
 - You'll have less than 4GB of space to store data in your database
