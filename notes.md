@@ -79,3 +79,36 @@ Two Extensions to Download for VS Code:
 Public IP Address: 184.72.128.199
 ssh -i ~/FILE_NAME_HERE.pem ubuntu@184.72.128.199
 
+## HTML
+`index.html` - what's loaded first if you don't specify - have this page!
+
+All html documents are a tree:
+    html
+head     body
+title
+
+Anything inside an element is a child of the element
+
+```
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>First HTML</title>
+    </head>
+```
+
+- "First HTML" is a child of title
+- Start tag, end tag
+- Nice diagram in slides
+- `<p>` is paragraph
+- VS Code will make you a starter html page if you type
+- Use the Live Server extension for VS Code
+- You usually don't do formatting in HTML anymore (like size, bolded, etc.) - you do it in CSS
+- h1: highest heading; h9: lowest heading
+- Absolute links - the exact location of your page on the internet. Won't work if you move the page's location
+- Relative link - can access files in the same directory. If you move them all to a different directory, they can all still access each other
+- details about html elements in instructions and slides
+- span - inline - italics, bolds, etc.
+- if you want to use reserved characters, you have to use an entity tag
+- Codepen - YOU MUST FORK IT OVER TO YOUR ACCOUNT SO YOU CAN SAVE IT
+
