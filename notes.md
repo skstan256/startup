@@ -1,6 +1,7 @@
 # Notes for 260
 
 ## Startup Misc.
+- FOR EVERY DEPLOY, HAVE THINGS LISTED IN THE README, SAD FACE IF YOU COULDN'T GET IT TO WORK
 - You'll have less than 4GB of space to store data in your database
     - Check if local storage is a possibility
 - Use basic implementation, basic data structures, basic control logic!
@@ -125,5 +126,6 @@ START WORKING ON THE HTML DELIVERABLE RIGHT NOW! DON'T FORGET YOU NEED 10 COMMIT
 - ./deployfiles.sh -k PEM_LOCATION -h WEBSITE_URL -s simon
 - CTRL-C to get out of the command you're currently doing
 - You have to deploy Simon
-- 
+- [the simon instructions](https://learn.cs260.click/page/simon/simonHtml/simonHtml_md)
+- develop html in VS code, and use the Live Server extension to see what the page looks like
 
