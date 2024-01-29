@@ -2,6 +2,8 @@
 
 ## Startup Misc.
 - FOR EVERY DEPLOY, HAVE THINGS LISTED IN THE README, SAD FACE IF YOU COULDN'T GET IT TO WORK
+- You can copy code as long as you know what it does
+- Never put something in your code that you don't understand
 - You'll have less than 4GB of space to store data in your database
     - Check if local storage is a possibility
 - Use basic implementation, basic data structures, basic control logic!
