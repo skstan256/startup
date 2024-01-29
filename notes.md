@@ -112,3 +112,18 @@ Anything inside an element is a child of the element
 - if you want to use reserved characters, you have to use an entity tag
 - Codepen - YOU MUST FORK IT OVER TO YOUR ACCOUNT SO YOU CAN SAVE IT
 
+# HTML, cont.
+START WORKING ON THE HTML DELIVERABLE RIGHT NOW! DON'T FORGET YOU NEED 10 COMMITS SPREAD OUT ACROSS THE WEEK - IT'S DUE ON MONDAY!
+- Can't have tabs (like I was thinking of) in vanilla html - displays one page at a time, links to different pages, loses things when it switches pages
+- AKA, you need to copy over the header and footer to every page. Every page will redo it
+- form tag - way for a user to provide
+- YOU HAVE TO INCLUDE (IN YOUR FOOTER) THE AUTHOR NAME (YOU) AND A LINK TO YOUR REPO
+- put placeholders for everything you can't actually do yet (calling third party services, etc.)
+- hardcode examples into it - ex. - hardcode a table with dummy data showing high scores as a placeholder for calling the database
+- buttons that don't do anything
+- look at the github repo you cloned - the html part of Simon
+- ./deployfiles.sh -k PEM_LOCATION -h WEBSITE_URL -s simon
+- CTRL-C to get out of the command you're currently doing
+- You have to deploy Simon
+- 
+
