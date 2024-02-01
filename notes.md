@@ -131,4 +131,34 @@ START WORKING ON THE HTML DELIVERABLE RIGHT NOW! DON'T FORGET YOU NEED 10 COMMIT
 - You have to deploy Simon
 - [the simon instructions](https://learn.cs260.click/page/simon/simonHtml/simonHtml_md)
 - develop html in VS code, and use the Live Server extension to see what the page looks like
+- body is all the stuff that you see; stuff in the head you don't see, but you can put styling there and stuff
+- Project: it will be really incomplete with a lot of placeholders
+
+# CSS
+- You can put styling on the element itself as an attribute, but that's a bad idea
+- look at slides for a diagram of rule syntax (for styling)
+- the way most people do CSS - a stylesheet that you link to. Ex. `<link rel="stylesheet" href="styles.css" \>`
+- things override other things if they're more specific
+- if things have the same specificity, then whichever one comes later is used
+A rule (tells the styles for paragraphs, the <p> tag)
+```
+p {
+    color: #ff338d;
+}
+
+#js {
+    text-align: center;
+}
+```
+Types of selectors (see slides for full list):
+- element: all elements of a specific name, ex. `p` and `div`
+- ID: the element with that specific ID - shown w/ #
+- class
+- list
+- descendant
+- child
+- pseudo - also selecting based on user state; ex. hover - changes when the user hovers cursor over the element
+- content, padding, border, margin
+- ON THE FINAL - INWARD TO OUTWARD - PADDING, BORDER, MARGIN - PBM - 'PALS BEFORE MARRIAGE'
+- 
 
