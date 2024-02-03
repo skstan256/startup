@@ -160,5 +160,30 @@ Types of selectors (see slides for full list):
 - pseudo - also selecting based on user state; ex. hover - changes when the user hovers cursor over the element
 - content, padding, border, margin
 - ON THE FINAL - INWARD TO OUTWARD - PADDING, BORDER, MARGIN - PBM - 'PALS BEFORE MARRIAGE'
-- 
+
+You can download google fonts, then put it in your css stylesheet, and use the font
+```
+@font-face {
+    font-family: "x";
+    src: url(url here);
+
+body {
+    font-family: x [BACK-UP FONTS HERE]
+}
+```
+Unicode and UTF-8:
+- Unicode: one character encoding for everything. Every character is 4 bytes. 4 billion possibilities.
+- UTF-8: compresses unicode; now most characters are 1 byte
+- `<meta charset="UTF-8" />` in html head
+
+Animation:
+- Put it in a tag, ex.
+- see code examples in animation slides
+- `@keyframes`
+
+
+# Misc.
+FOR YOUR HTML PROJECT, DON'T FORGET TO UPDATE THE README
+[Public APIs](https://github.com/public-apis/public-apis)
+
 
