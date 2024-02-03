@@ -181,6 +181,8 @@ Animation:
 - see code examples in animation slides
 - `@keyframes`
 
+# Deploying Simon to Start-Up Website:
+`./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
 
 # Misc.
 FOR YOUR HTML PROJECT, DON'T FORGET TO UPDATE THE README
