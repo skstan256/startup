@@ -181,11 +181,49 @@ Animation:
 - see code examples in animation slides
 - `@keyframes`
 
+## Responsive Design
+
+The website adapts to different screen sizes.
+Five different ways:
+```
+<meta
+    name="viewport"
+    content= "width=device-width, initial-scale=1"
+/>
+```
+^ This one works great for most things - stops device from automatically scaling.
+
+
+`float: right;` or `float:inline-end;` -- equivalent, but inline-end works globally for languages that go right to left. Other end is `float: left;` and `float:inline-end`. Used in `aside{}`
+
+## Display
+- 
+- none - hides it
+- block - it expands to fill up the width of its rendered parent
+- inline - width is its content size; doesn't expand to fill the whole width - ex. bold
+- grid - it will change how many of the child objects are displayed per row based on how wide the screen is (ex. two images per row, four images per row)
+- flex - works on the children of body (header, main, footer). You can tell them to grow and shrink or stay the same. `flex: 0 80px;` makes it stay 80px and not grow or shrink. The second number is in addition to the first number, which is a fraction of the whole. So `flex: 1 30px` will be at least 30 pixels, and will fill the rest of the space (?). 1 and 3 will make a ratio of 1:3 (?)
+- you can put flex displays inside each other and switch which orientation (columns, rows - which might be the opposite of what you think they do?)
+- look into overflow=scroll, there's also one to cut
+- `@media` - can change how things render - can put an aside on the bottom instead of the side if the screen is too narrow, or get rid of it completely if the screen is too small
+```
+body {
+    display: flex;
+    flex-direction: column;
+}
+```
+- (misc. - class is for objects with similar attributes. Ex. class=container)
+
+
+
 # Deploying Simon to Start-Up Website:
 `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
 
 # Misc.
-FOR YOUR HTML PROJECT, DON'T FORGET TO UPDATE THE README
-[Public APIs](https://github.com/public-apis/public-apis)
+- FOR YOUR HTML PROJECT, DON'T FORGET TO UPDATE THE README
+- [Public APIs](https://github.com/public-apis/public-apis)
+- Content, padding, border, margin
+- Code Pen has debug mode
+- look into fly-cut for mac
 
 
