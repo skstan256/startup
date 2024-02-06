@@ -44,6 +44,7 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 - **Authentication** - placeholders for the user's username and password on a login page
 - **Database Data** - demonstrated by placeholders for the user's projects, thought logs, to-do lists, reminders, and username displays
 - **WebSocket Data** - an alert shown on the reminders page, as a placeholder for a notification when a reminder comes up. Also, the time you've been working (and the motivational phrase) on the bottom of the thought log, to-do list, and reminder pages that will update periodically
+- **Note** - images are too distracting for ADHD people like myself, so my application will not have any images. This is a feature, not a bug.
 
 
 [Link to notes page](notes.md)
