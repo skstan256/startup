@@ -39,6 +39,11 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 ![Login and Welcome Pages Sketch](sketch_1.jpg)
 ![Project Page and Tabs Sketch](sketch_2.jpg)
 
+## HTML Deliverable
+- **Application Data** - demonstrated by the placeholder for the username, user projects, the 3rd party API call to get the next upcoming holiday (displayed on the home screen), etc.
+- **Authentication** - placeholders for the user's username and password on a login page
+- **Database Data** - demonstrated by placeholders for the user's projects, thought logs, to-do lists, reminders, and username displays
+- **WebSocket Data** - an alert shown on the reminders page, as a placeholder for a notification when a reminder comes up. Also, the time you've been working (and the motivational phrase) on the bottom of the thought log, to-do list, and reminder pages that will update periodically
 
 
 [Link to notes page](notes.md)
