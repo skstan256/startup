@@ -214,6 +214,20 @@ body {
 ```
 - (misc. - class is for objects with similar attributes. Ex. class=container)
 
+# CSS, cont. (Feb. 7)
+- If you're trying to figure out what is applying to what, USE THE BROWSER DEBUGGER!
+- Don't add pixel values - make it responsive
+- **use the browser debugger to see what your css looks like on different screen sizes**
+- if the body is 100% and the margin isn't 0, it might not look centered on all screen sizes
+- text-align vs align-content and justify-content - check if it aligns vertically, horizontally, etc.
+
+## CSS Frameworks
+- frameworks - bundles of CSS stuff (ex. bootstrap, tailwind)
+- need to put a link in your code - see in slides - <link rel= href= />
+- then use the class - ex. `class=btn btn-primary`
+- can bring in javascript that works with the framework - that gets drop down menus to work, and stuff. Look into that
+- USE ACCORDIAN ON THE PROJECT PAGE?
+- @media queries
 
 
 # Deploying Simon to Start-Up Website:
