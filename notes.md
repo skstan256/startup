@@ -229,6 +229,41 @@ body {
 - USE ACCORDIAN ON THE PROJECT PAGE?
 - @media queries
 
+# JavaScript
+## History
+- ES5, ES6
+- Inspired by Scheme
+- Interpreted
+- Dynamically typed
+- Has nothing to do with Java (was called that because Java was hot at the time)
+- browsers are naturally JavaScript interpreters - you can go to about:blank, inspect, and go to console
+- Node.js - runs JavaScript
+## Playgrounds:
+- CodePen
+- VSCode (Live Server)
+- Node.js
+- browser console - you can even do breakpoints and debugging
+## How to:
+- NAME IT 
+- link to html
+- you have to load the script before you use it
+- declare variable - ex. - `let y = 1;`
+- declare constant variable. - ex. - `const z = "cow"`
+- functions are first order objects - you can treat a function like an int or a boolean - ex. you can return a function
+- `null` is the empty value
+- `undefined` is a type - it means nobody has declared it yet
+- you can set a variable to a different type, no problem
+- object: key-value pairs - a map/dict - like JSON - actually, JSON comes from JavaScript
+- array: primitive type is object, inherits stuff from object, but has more attributes (?)
+- 
+## How to link (GET CODE EXAMPLES FROM SLIDES)
+- script file
+- script tag
+- script attribute
+## Misc.
+- `console.log("")` - logs the string
+- `debugger;` - like a hardcoded breakpoint
+
 
 # Deploying Simon to Start-Up Website:
 `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
@@ -239,5 +274,6 @@ body {
 - Content, padding, border, margin
 - Code Pen has debug mode
 - look into fly-cut for mac
+- the browser just loads one html page. Everything starts from there - calling cs files and JavaScript files
 
 
