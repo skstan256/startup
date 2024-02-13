@@ -264,6 +264,27 @@ body {
 - `console.log("")` - logs the string
 - `debugger;` - like a hardcoded breakpoint
 
+# JavaScript, cont.
+- falsy are things like false, 0, -0, '', NaN, null, undefined
+- truthy = !falsy
+- be careful when comparing objects, because it will compare memory locations, not content
+- && - logical and
+- equality ===
+- ! negates
+- c syntax for for loops:
+- for (let i = 1; i < 3; i++)
+- switch statements are a thing - put break unless you want to do the cases beneath it too
+- you can have inner functions within a function (so that only that function can use it, and you don't have to worry about other things using it)
+- you can assign a function to a variable (ex. you can have a variable pointing to a function) - called an anonymous function
+- `function f() {...}` vs `f = function () {...}`
+- you have to tell it to return things (like in Python)
+- you can do optional parameters and default parameters -- you can return a parameter that the user never gave (it will be undefined)
+- lambda functions/arrow functions - a simplified function that you can pass as a parameter. No name, but you could have a variable pointing to it
+- ` const arrow = () => 1;`
+- `const` means you can't redefine the variable to be something else (you can mutate the object, but it has to stay the same object)
+- `let` means you can change what the variable points to
+- closure/factory methods are very important - maybe figure out how they work
+- 
 
 # Deploying Simon to Start-Up Website:
 `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
