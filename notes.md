@@ -214,7 +214,77 @@ body {
 ```
 - (misc. - class is for objects with similar attributes. Ex. class=container)
 
+# CSS, cont. (Feb. 7)
+- If you're trying to figure out what is applying to what, USE THE BROWSER DEBUGGER!
+- Don't add pixel values - make it responsive
+- **use the browser debugger to see what your css looks like on different screen sizes**
+- if the body is 100% and the margin isn't 0, it might not look centered on all screen sizes
+- text-align vs align-content and justify-content - check if it aligns vertically, horizontally, etc.
 
+## CSS Frameworks
+- frameworks - bundles of CSS stuff (ex. bootstrap, tailwind)
+- need to put a link in your code - see in slides - <link rel= href= />
+- then use the class - ex. `class=btn btn-primary`
+- can bring in javascript that works with the framework - that gets drop down menus to work, and stuff. Look into that
+- USE ACCORDIAN ON THE PROJECT PAGE?
+- @media queries
+
+# JavaScript
+## History
+- ES5, ES6
+- Inspired by Scheme
+- Interpreted
+- Dynamically typed
+- Has nothing to do with Java (was called that because Java was hot at the time)
+- browsers are naturally JavaScript interpreters - you can go to about:blank, inspect, and go to console
+- Node.js - runs JavaScript
+## Playgrounds:
+- CodePen
+- VSCode (Live Server)
+- Node.js
+- browser console - you can even do breakpoints and debugging
+## How to:
+- NAME IT 
+- link to html
+- you have to load the script before you use it
+- declare variable - ex. - `let y = 1;`
+- declare constant variable. - ex. - `const z = "cow"`
+- functions are first order objects - you can treat a function like an int or a boolean - ex. you can return a function
+- `null` is the empty value
+- `undefined` is a type - it means nobody has declared it yet
+- you can set a variable to a different type, no problem
+- object: key-value pairs - a map/dict - like JSON - actually, JSON comes from JavaScript
+- array: primitive type is object, inherits stuff from object, but has more attributes (?)
+- 
+## How to link (GET CODE EXAMPLES FROM SLIDES)
+- script file
+- script tag
+- script attribute
+## Misc.
+- `console.log("")` - logs the string
+- `debugger;` - like a hardcoded breakpoint
+
+# JavaScript, cont.
+- falsy are things like false, 0, -0, '', NaN, null, undefined
+- truthy = !falsy
+- be careful when comparing objects, because it will compare memory locations, not content
+- && - logical and
+- equality ===
+- ! negates
+- c syntax for for loops:
+- for (let i = 1; i < 3; i++)
+- switch statements are a thing - put break unless you want to do the cases beneath it too
+- you can have inner functions within a function (so that only that function can use it, and you don't have to worry about other things using it)
+- you can assign a function to a variable (ex. you can have a variable pointing to a function) - called an anonymous function
+- `function f() {...}` vs `f = function () {...}`
+- you have to tell it to return things (like in Python)
+- you can do optional parameters and default parameters -- you can return a parameter that the user never gave (it will be undefined)
+- lambda functions/arrow functions - a simplified function that you can pass as a parameter. No name, but you could have a variable pointing to it
+- ` const arrow = () => 1;`
+- `const` means you can't redefine the variable to be something else (you can mutate the object, but it has to stay the same object)
+- `let` means you can change what the variable points to
+- closure/factory methods are very important - maybe figure out how they work
+- 
 
 # Deploying Simon to Start-Up Website:
 `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
@@ -225,5 +295,6 @@ body {
 - Content, padding, border, margin
 - Code Pen has debug mode
 - look into fly-cut for mac
+- the browser just loads one html page. Everything starts from there - calling cs files and JavaScript files
 
 
