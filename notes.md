@@ -284,7 +284,31 @@ body {
 - `const` means you can't redefine the variable to be something else (you can mutate the object, but it has to stay the same object)
 - `let` means you can change what the variable points to
 - closure/factory methods are very important - maybe figure out how they work
-- 
+- string literal: `let s = "text of string"`
+- has string functions similar to Python
+- regex is a thing
+- arrays:
+```
+let numbers = [];
+for (let i = 1; i < 11, i++) {
+    numbers.push(i);
+}
+```
+- the map operation maps one thing to another thing (not to be confused with a map object in other languages. JS's object is 
+- reduce - `numbers.reduce((a, c) => a + c'
+- TODO: look up map and reduce
+- filter - `numbers.filter((n) => n % 2)` returns a new array with the elements for which the lambda function returns true. So this will return all odd numbers
+- it's common to just have try with finally
+- for all threads, have them in some sort of catch statement, or else it will bring down your whole program if there's an exception
+- only throw exceptions that are exceptional
+- has its own version of f'' strings in Python
+- using or - stops as soon as it finds something truthy, doesn't execute anything else
+- can set variables with or statements - `x = x || 5`
+- Nullish: undefined or null
+- `??` is the or for nullish - returns the first thing that isn't nullish
+- can short circuit with nullish
+- `z ?? (z=x)` If z is nullish, define z to be x
+- Nullish assignment operator - `y ??=` - if null, assign to 
 
 # Deploying Simon to Start-Up Website:
 `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
