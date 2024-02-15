@@ -12,11 +12,9 @@
     <body>
         <header>
             <h1>Web-Brain</h1>
-            <nav>
-                <h3>My profile (skstan256)</h3>
-                <menu id="profile-menu">
-                    <li><a href="index.html">Log Out</a></li>
-                </menu>
+            <nav id="top-bar">
+                <span>skstan256</span>
+                <button type="button" class="btn btn-primary">Log Out</button>
             </nav>
             <hr />
         </header>
@@ -99,6 +97,11 @@
               <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree">
                 <div class="accordion-body">
                   <!--Reminders Code-->
+                  <div class="form-group">
+                    <input class="form-control" type="text" id="thought-field" name="thoughtVar" placeholder="Enter reminder"/>
+                    <button class="btn btn-primary"><i class="bi bi-alarm"></i></button>
+                    <button class="btn btn-secondary" disabled>+</button>
+                  </div>
                   <ul class="list-group">
                     <!--Reminders Items-->
                     <li class="list-group-item">

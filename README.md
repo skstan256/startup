@@ -46,5 +46,12 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 - **WebSocket Data** - an alert shown on the reminders page, as a placeholder for a notification when a reminder comes up. Also, the time you've been working (and the motivational phrase) on the bottom of the thought log, to-do list, and reminder pages that will update periodically
 - **Note** - images are too distracting for ADHD people like myself, so my application will not have any images. This is a feature, not a bug.
 
+## CSS Deliverable
+
+**Notes**
+- This application is meant to be used as a sidebar, not at full monitor width
+- The css is intentionally minimalist and not attention grabbing. Us ADHDers get distracted very easily by shiny formatting.
+- I still haven't figured out how to make the accordian bodies to collapse correctly. It's not my accordian specifically; even when I copy and paste the demos, it doesn't work...hopefully I'll get to the bottom of this eventually
+- I redid a lot of the html design while doing the css
 
 [Link to notes page](notes.md)

@@ -2,9 +2,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
+header {
+    margin-right: 10px;
+}
+
 body {
     font-family: Lexend;
-    
+    margin: 10px;
 }
 
 menu {
@@ -26,8 +30,17 @@ menu {
 
 .form-group {
     display: flex;
-
     justify-content: right;
+}
+
+#top-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    justify-content: right;
+    gap: 10px;
 }
 
 #work-session {
