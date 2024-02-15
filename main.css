@@ -7,5 +7,17 @@ body {
     
 }
 
+.list-group-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+}
+
+.form-group {
+    display: flex;
+    
+}
 
 
