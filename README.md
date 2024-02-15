@@ -51,11 +51,11 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 - [x] done - Prerequisite: Link to Github on home page
 - [x] done - Prerequisite: Notes in startup Git repository README.md file
 - [x] partially done - 30% Header, footer, and main content body. For the life of me can't figure out why it won't fill up the page...but I did use flex layout
-[x] - done - 20% Navigation elements. Buttons or links to move around
+- [x] - done - 20% Navigation elements. Buttons or links to move around
 - [x] done - 10% Mostly responsive to window resizing. Thank you, Bootstrap.
-[x] - done - 20% Application elements. Buttons are using bootstrap
-[x] - done - 10% Application text content. Text is displayed using the Merriday font
-[x] - done - 10% Application images. I added curved edges around my profile photo.
+- [x] done - 20% Application elements. Bootstrap accordian for the project page.
+- [x] done - 10% Application text content. Text is displayed using Lexend font
+- [x] done - 10% Application images. I added Bootstrap icons. I won't be using any other images because it's too distracting for us ADHDers.
 
 **Notes**
 - My commits are inconsistent because my focus was on another CS lab for the first while
