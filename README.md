@@ -47,10 +47,10 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 - **Note** - images are too distracting for ADHD people like myself, so my application will not have any images. This is a feature, not a bug.
 
 ## CSS Deliverable
-[x] - done - Prerequisite: Simon CSS deployed to your production environment
-[x] - done - Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
-[x] - done - Prerequisite: Notes in your startup Git repository README.md file
-[x] - done - 30% Header, footer, and main content body. Used flex to layout sections.
+- [x] done - Prerequisite: Simon CSS deployed
+- [x] done - Prerequisite: Link to Github on home page
+- [x] done - Prerequisite: Notes in startup Git repository README.md file
+- [x] done - 30% Header, footer, and main content body. Used flex to layout sections.
 [x] - done - 20% Navigation elements. Links highlight on hover.
 [x] - done - 10% Responsive to window resizing. Looks great on iPad, desktop, and iPhone.
 [x] - done - 20% Application elements. Buttons are using bootstrap
@@ -58,6 +58,7 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 [x] - done - 10% Application images. I added curved edges around my profile photo.
 
 **Notes**
+- My commits are inconsistent because my focus was on another CS lab for the first while
 - This application is meant to be used as a sidebar, not at full monitor width
 - The css is intentionally minimalist and not attention grabbing. Us ADHDers get distracted very easily by shiny formatting.
 - I still haven't figured out how to make the accordian bodies to collapse correctly. It's not my accordian specifically; even when I copy and paste the demos, it doesn't work...hopefully I'll get to the bottom of this eventually

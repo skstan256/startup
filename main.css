@@ -9,6 +9,7 @@ header {
 body {
     font-family: Lexend;
     margin: 10px;
+    
 }
 
 menu {
@@ -48,10 +49,50 @@ menu {
     flex-direction: row;
     padding: 10px;
 }
+
 #work-session-menu {
     display: flex;
     flex-direction: row;
 }
+
+#login-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+#login-form {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+
+#index-body {
+    display: flex;
+    flex-direction: column;
+}
+#index-main {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    justify-content: center;
+}
+.login-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
 
 
 
