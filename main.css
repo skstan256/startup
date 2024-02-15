@@ -7,6 +7,10 @@ body {
     
 }
 
+menu {
+    list-style-type: none;
+}
+
 .list-group-item {
     display: flex;
     flex-direction: row;
@@ -22,9 +26,21 @@ body {
 
 .form-group {
     display: flex;
-    
+
     justify-content: right;
 }
+
+#work-session {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+#work-session-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+
 
 
 
