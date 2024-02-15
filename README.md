@@ -50,9 +50,9 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 - [x] done - Prerequisite: Simon CSS deployed
 - [x] done - Prerequisite: Link to Github on home page
 - [x] done - Prerequisite: Notes in startup Git repository README.md file
-- [x] done - 30% Header, footer, and main content body. Used flex to layout sections.
-[x] - done - 20% Navigation elements. Links highlight on hover.
-[x] - done - 10% Responsive to window resizing. Looks great on iPad, desktop, and iPhone.
+- [x] partially done - 30% Header, footer, and main content body. For the life of me can't figure out why it won't fill up the page...but I did use flex layout
+[x] - done - 20% Navigation elements. Buttons or links to move around
+- [x] done - 10% Mostly responsive to window resizing. Thank you, Bootstrap.
 [x] - done - 20% Application elements. Buttons are using bootstrap
 [x] - done - 10% Application text content. Text is displayed using the Merriday font
 [x] - done - 10% Application images. I added curved edges around my profile photo.

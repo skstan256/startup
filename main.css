@@ -2,15 +2,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
-header {
-    margin-right: 10px;
-}
-
 body {
     font-family: Lexend;
     margin: 10px;
-    
+    display: flex;
+    flex-direction: column;
 }
+
+header {
+    flex: 0 20px;
+    margin-right: 10px;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    flex: 0 20px;
+}
+
+
 
 menu {
     list-style-type: none;
