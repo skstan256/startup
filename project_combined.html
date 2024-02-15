@@ -34,19 +34,19 @@
                 <div class="accordion-body">
                   <!--THOUGHT LOG LIST CODE-->
                   <div class="form-group">
-                    <input class="form-control" type="text" id="thought-field" name="thoughtVar" />
-                    <button class="btn btn-secondary">Add Thought</button>
+                    <input class="form-control" type="text" id="thought-field" name="thoughtVar" placeholder="Enter thought"/>
+                    <button class="btn btn-secondary">+</button>
                   </div>
                   <ul class = "list-group">
                       <li class="list-group-item">
-                        <p class="list-group-item-text">Maybe I should look into using Lexend as a font</p>
+                        <span class="list-group-item-text">Maybe I should look into using Lexend as a font</span>
                         <menu class="list-group-item-controls">
                           <button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button>
                           <button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button>
                         </menu>
                       </li>
                       <li class="list-group-item">
-                        Should I let the user customize color scheme, or just hardcode my personal preference?
+                        <span class="list-group-item-text">See if there's an easy way to make text gray</span>
                         <menu class="list-group-item-controls">
                           <button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button>
                           <button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button>
@@ -69,19 +69,19 @@
                     <!--To-Do Items-->
                     <li class="list-group-item">
                       <input class="form-check-input me-3" type="checkbox" checked="true">
-                        <s>Deploy Simon</s>
-                        <menu class="list-group-item-controls">
-                          <button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button>
-                          <button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button>
-                        </menu>
+                      <span class="list-group-item-text"><s>Deploy Simon</s></span>
+                      <menu class="list-group-item-controls">
+                        <button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button>
+                      </menu>
                     </li>
                     <li class="list-group-item">
                       <input class="form-check-input me-3" type="checkbox" >
-                        Update README
-                        <menu class="list-group-item-controls">
-                          <button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button>
-                          <button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button>
-                        </menu>
+                      <span class="list-group-item-text">Update README</span>
+                      <menu class="list-group-item-controls">
+                        <button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button>
+                      </menu>
                     </li>
                   </ul>
                 </div>
@@ -96,7 +96,25 @@
               <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree">
                 <div class="accordion-body">
                   <!--Reminders Code-->
-
+                  <ul class="list-group">
+                    <!--Reminders Items-->
+                    <li class="list-group-item">
+                      <span class="list-group-item-text">Commit!</span>
+                      <menu class="list-group-item-controls">
+                        <button type="button" class="btn btn-primary" ><i class="bi bi-bell"></i> 9:50pm</button>
+                        <button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button>
+                      </menu>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="list-group-item-text">Update README</span>
+                      <menu class="list-group-item-controls">
+                        <button type="button" class="btn btn-primary" ><i class="bi bi-bell"></i> End of Session</button>
+                        <button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button>
+                      </menu>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
