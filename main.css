@@ -13,11 +13,13 @@ body {
     align-items: center;
     align-content: center;
     vertical-align: middle;
+    justify-content: right;
 }
 
-.form-group {
-    display: flex;
-    
+.list-group-item-text {
+    flex: 1;
 }
+
+
 
 
