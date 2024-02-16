@@ -308,7 +308,32 @@ for (let i = 1; i < 11, i++) {
 - `??` is the or for nullish - returns the first thing that isn't nullish
 - can short circuit with nullish
 - `z ?? (z=x)` If z is nullish, define z to be x
-- Nullish assignment operator - `y ??=` - if null, assign to 
+- Nullish assignment operator - `y ??=` - if null, assign to value
+- spread operator - take all the stuff in one item and put the things in another item `...` ex. `new_array = [...old_array, 5]`
+- `console.table(table_object)` - will print it as a table instead of straight text
+- objects in JS are kinda like dictionaries - they have key value pairs, you can access
+- `x.r?.() || other_function` checks if r is nullish, and if it is, doesn't call r -- instead does the fallback function
+- you can make custom iterators - `*`
+- MAKE SURE YOU UNDERSTAND DESTRUCTURING - lets you set things inside an object to different variables
+- `[x] = a` sets a to the first value in x (?)
+- `[x, , y, ..z] = [1, 2, 3, 4, 5, 6, 7]` will assign first item to x, 3rd item to y, the rest of the array to z (skips second value)
+- destructuring plus default parameters - if there aren't enough items in the object to put in the variables you're destructuring, you can set the variables to default values
+- private field - underscore
+- DON'T DO MODULES IN THE JAVASCRIPT DELIVERABLE
+### DOM
+- a tree built out of your html and css so it knows what applies to what
+- `document` - represents the top level node
+- you can inject things into an html element, or add completely new ones
+- eventListener - will make things happen when the user does something
+- there is a little alert box that comes up
+- use local storage
+
+### JavaScript deliverable:
+- don't use modules
+- use local storage - you can see it if you inspect, then go to the application tab > Storage > Local Storage
+- it associates specific data with a specific URL
+- make your app totally functional as much as you can
+- use a fallback pattern - if it can't get to the server, use local storage
 
 # Deploying Simon to Start-Up Website:
 `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
