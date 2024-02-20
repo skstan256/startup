@@ -335,6 +335,35 @@ for (let i = 1; i < 11, i++) {
 - make your app totally functional as much as you can
 - use a fallback pattern - if it can't get to the server, use local storage
 
+### Promises
+- When you refresh, everything gets dumped and put in again
+- JavaScript is SINGLE THREADED - or, well, there's only one rendering thread
+- Everything must be ASYNCHRONOUS
+- One thread per tab
+- You don't want to make the user wait while a network thing comes back and the page is frozen
+- Call stack (single threaded rendering stack) and Web API. You put stuff in the Web API that you don't want to block up the call stack
+- the Web API knows how to wait for the network to respond, files to come back from the disk, etc.
+- basically, I'm putting you in the Web API, call me when you're done
+Promise object:
+- pending: currently running asynchronously
+- fulfilled: completed successfully
+- rejected: failed to compute
+- see slides for syntax diagram
+- `new Promise((resolve, reject) => resolve(true))`
+- resolve and reject are functions the promise object calls based on what the function returns (??) - see code example in slides. So in the callback function (in the promise object), you kinda throw a resolve or a reject. Then the `promiseName.then` kinda catches it and calls a function for resolve if you threw a resolve, or a reject function for reject
+- you can also put a reject in a then/catch/finally
+- `then` method -- when callback resolves, then call this
+- just look at the slides...
+- you can call a whole bunch of promises and have it work on them on the side and come back whenever they finish
+- 
+### Async, Await
+- await: will block execution until it resolves
+- async: to fix await functions. You wrap the whole thing with a promise (like a then). A function marked with async WILL ALWAYS RETURN A PROMISE. IF YOU DON'T GIVE IT ONE, IT WILL GENERATE ONE. If you're returning a promise already, you don't need to wrap it in a promise
+- rules for using await: top level module function OR called from an async function
+- `console.log(await cow()); ` is like making a promise and then dealing with the result, but 
+- look at the slides...
+
+
 # Deploying Simon to Start-Up Website:
 `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
 
