@@ -355,13 +355,31 @@ Promise object:
 - `then` method -- when callback resolves, then call this
 - just look at the slides...
 - you can call a whole bunch of promises and have it work on them on the side and come back whenever they finish
-- 
+- `<button onclick="callsThisFunction()"`
+  
 ### Async, Await
 - await: will block execution until it resolves
 - async: to fix await functions. You wrap the whole thing with a promise (like a then). A function marked with async WILL ALWAYS RETURN A PROMISE. IF YOU DON'T GIVE IT ONE, IT WILL GENERATE ONE. If you're returning a promise already, you don't need to wrap it in a promise
 - rules for using await: top level module function OR called from an async function
 - `console.log(await cow()); ` is like making a promise and then dealing with the result, but 
 - look at the slides...
+- async - wraps what the function returns with a promise if you don't return your own promise
+- await - tells it to wait until it comes back (requires all the calls above (?) it to also be async)
+
+### Debugging Javascript
+- console.log debugging
+- source debugging
+the stuff you want to do:
+- put in a breakpoint
+- have the webpage open, then inspect and have the console open. It will literally show you what happens when you press buttons, and will show you error messages and stuff! You can even put in break points by clicking on the line number! You can click/hover to see the value of specific variables in the code. You can also interact with local variables in the console while paused on a breakpoint (ex. execute `fib[fib.length]` to see that it is undefined)
+- if the script relies on anything in the DOM right away, run the script at the end of the body
+- in general, JavaScript won't throw exceptions for type conversion stuff; it will just do its best (which normally works but normally does really weird stuff)
+
+### Startup JavaScript:
+- have fake Websocket stuff - look at setInterval function for example of how to 
+- look at login.js for how to store stuff in local storage - associated with domain name and port
+- localStorage.getItem() null operator alt value - find line of code in example
+- if you're running a function that will freeze stuff up (like playing a sound), need to have it be async - use 
 
 
 # Deploying Simon to Start-Up Website:
