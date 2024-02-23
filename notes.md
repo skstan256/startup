@@ -401,6 +401,9 @@ NO:
 - Outside in - marriage before pals
 - Regex: v.match(/A|f/i)  -- anything on the inside of the slashes is the regular expression. The outside is a flag
 - then/catch/finally -- if what it calls has a timeout, the rest of the code will keep moving, and it'll do the then/catch/finally later when it comes back
+- JavaScript: {x:1}. JSON: {"x":1} (must be string)
+- DNS Subdomain: c260.cs.byu.edu
+- column-reverse: puts the column elements in reverse
 
 ## LOOK AT:
 - arrow syntax
