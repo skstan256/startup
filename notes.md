@@ -381,6 +381,29 @@ the stuff you want to do:
 - localStorage.getItem() null operator alt value - find line of code in example
 - if you're running a function that will freeze stuff up (like playing a sound), need to have it be async - use 
 
+## Midterm Review
+- await() blocks until it comes back
+- know a couple console commands - chmod changes the mode so, for example, an executable can run
+- know DNS record things - SOA, TXT, CNAME, A
+- turn BYU text blue `<div class="header">BYU</div>` would be `div.header{...}`
+- Padding: around the content
+- Arrow syntax - if it's all on the same line, it just returns that value - don't need to tell it to return
+- Pre-increment and post-increment is a thing in JavaScript
+- DOM textContent - creates a text node child with the text. If the element had children before, blows those children away. Basically, just sets the text for an element
+JS functions:
+YES:
+- const f = (x) => {}
+- function f(x) {}
+- const f = function(x) {}
+NO:
+- function f(x) = {}
+
+- Outside in - marriage before pals
+- Regex: v.match(/A|f/i)  -- anything on the inside of the slashes is the regular expression. The outside is a flag
+- then/catch/finally -- if what it calls has a timeout, the rest of the code will keep moving, and it'll do the then/catch/finally later when it comes back
+
+## LOOK AT:
+- arrow syntax
 
 # Deploying Simon to Start-Up Website:
 `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
