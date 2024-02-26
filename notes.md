@@ -408,6 +408,41 @@ NO:
 ## LOOK AT:
 - arrow syntax
 
+# How does the Internet Work?
+- URL --> goes to the Domain Name System (DNS) to look up the IP address
+- DNS record - part of a big registry that tells how to get to the IP address from a name
+- Use the IP address to talk to the server
+- IP addresses are leased -- can't buy them
+Layer Example Purpose
+- Application - HTTPS - Functionality like web browsing
+- Transport - TCP/UDP - Moving connection information packets
+- Internet - IP - Establishing connections
+- Link - Fiber, hardware - Physical connections
+Cont.
+- TCP: makes sure all data is received in the order it's sent. Expensive, lots of handshaking back and forth. Ex. downloading a video. If stuff comes in the wrong order, everything will be messed up
+- UDP: faster, but stuff might get missed, or out of order
+Server vs. Service:
+- Server: the hardware (?) - the laptop, ex. that's doing it
+- Service: software that's running on the hardware server
+Ports:
+- IP address gets you to the machine, but need to do different things with the machine
+- machine must be listening on the port to make a connection
+- It's like piers on the dock
+- Certain ports are assigned for certain things (by the internet authority?), ex. port 443 for https, port 80 for http, etc. Every major protocol has a different port it's assigned by default
+- Each port is like a way into a house. You want to keep most closed most of the time.
+Caddy:
+- one port goes to a gateway
+- caddy moves you to another port based on what you're doing - ex. simon.domainname vs. startup.domainname
+Misc:
+- Example top level domains: com, org, uk, click, gold
+- localhost: 127.0.0.1
+DNA record tyes:
+- A/AAAA: Address. Specific IP addresses
+- CNAME: Canonical name. Alias
+- NS: Name server. Authority for queries and proof of ownership
+- TEXT: Metadata. Used for policies and verification.
+- SOA: Start of authority. Propagation information
+
 # Deploying Simon to Start-Up Website:
 `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
 
