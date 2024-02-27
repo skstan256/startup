@@ -366,6 +366,25 @@ Promise object:
 - async - wraps what the function returns with a promise if you don't return your own promise
 - await - tells it to wait until it comes back (requires all the calls above (?) it to also be async)
 
+```
+async function cow() {
+    return moo;
+}
+console.log(cow());
+//OUTPUT: Promise {<fulfilled>: 'moo'}
+
+async function cow() {
+    return new Promise((resolve) => {
+        resolve('moo');
+    });
+}
+console.log(cow());
+//output: Promise {<pending>}
+console.log(await cow());
+//output: moo
+
+```
+
 ### Debugging Javascript
 - console.log debugging
 - source debugging
@@ -401,13 +420,37 @@ NO:
 - Outside in - marriage before pals
 - Regex: v.match(/A|f/i)  -- anything on the inside of the slashes is the regular expression. The outside is a flag
 - then/catch/finally -- if what it calls has a timeout, the rest of the code will keep moving, and it'll do the then/catch/finally later when it comes back
-- JavaScript: {x:1}. JSON: {"x":1} (must be string)
+- JavaScript: {x:1}. JSON: {"x":1} (must be string, MUST BE DOUBLE QUOTES)
 - DNS Subdomain: c260.cs.byu.edu
 - column-reverse: puts the column elements in reverse
 
 ## LOOK AT:
 - arrow syntax
 
+## Arrow syntax:
+(parameters) => {function}
+```
+// standard syntax
+a.sort(function (v1, v2) {
+    return v1 - v2;
+})
+// arrow function syntax
+a.sort((v1, v2) => v1 - v2);
+```
+Same line - doesn't need a return statement:
+
+```
+() => 3; //returns 3
+
+() => {
+    3; //returns undefined
+}
+
+() => {
+    return 3; //returns 3
+}
+
+```
 # How does the Internet Work?
 - URL --> goes to the Domain Name System (DNS) to look up the IP address
 - DNS record - part of a big registry that tells how to get to the IP address from a name
