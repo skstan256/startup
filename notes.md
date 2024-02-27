@@ -335,6 +335,157 @@ for (let i = 1; i < 11, i++) {
 - make your app totally functional as much as you can
 - use a fallback pattern - if it can't get to the server, use local storage
 
+### Promises
+- When you refresh, everything gets dumped and put in again
+- JavaScript is SINGLE THREADED - or, well, there's only one rendering thread
+- Everything must be ASYNCHRONOUS
+- One thread per tab
+- You don't want to make the user wait while a network thing comes back and the page is frozen
+- Call stack (single threaded rendering stack) and Web API. You put stuff in the Web API that you don't want to block up the call stack
+- the Web API knows how to wait for the network to respond, files to come back from the disk, etc.
+- basically, I'm putting you in the Web API, call me when you're done
+Promise object:
+- pending: currently running asynchronously
+- fulfilled: completed successfully
+- rejected: failed to compute
+- see slides for syntax diagram
+- `new Promise((resolve, reject) => resolve(true))`
+- resolve and reject are functions the promise object calls based on what the function returns (??) - see code example in slides. So in the callback function (in the promise object), you kinda throw a resolve or a reject. Then the `promiseName.then` kinda catches it and calls a function for resolve if you threw a resolve, or a reject function for reject
+- you can also put a reject in a then/catch/finally
+- `then` method -- when callback resolves, then call this
+- just look at the slides...
+- you can call a whole bunch of promises and have it work on them on the side and come back whenever they finish
+- `<button onclick="callsThisFunction()"`
+  
+### Async, Await
+- await: will block execution until it resolves
+- async: to fix await functions. You wrap the whole thing with a promise (like a then). A function marked with async WILL ALWAYS RETURN A PROMISE. IF YOU DON'T GIVE IT ONE, IT WILL GENERATE ONE. If you're returning a promise already, you don't need to wrap it in a promise
+- rules for using await: top level module function OR called from an async function
+- `console.log(await cow()); ` is like making a promise and then dealing with the result, but 
+- look at the slides...
+- async - wraps what the function returns with a promise if you don't return your own promise
+- await - tells it to wait until it comes back (requires all the calls above (?) it to also be async)
+
+```
+async function cow() {
+    return moo;
+}
+console.log(cow());
+//OUTPUT: Promise {<fulfilled>: 'moo'}
+
+async function cow() {
+    return new Promise((resolve) => {
+        resolve('moo');
+    });
+}
+console.log(cow());
+//output: Promise {<pending>}
+console.log(await cow());
+//output: moo
+
+```
+
+### Debugging Javascript
+- console.log debugging
+- source debugging
+the stuff you want to do:
+- put in a breakpoint
+- have the webpage open, then inspect and have the console open. It will literally show you what happens when you press buttons, and will show you error messages and stuff! You can even put in break points by clicking on the line number! You can click/hover to see the value of specific variables in the code. You can also interact with local variables in the console while paused on a breakpoint (ex. execute `fib[fib.length]` to see that it is undefined)
+- if the script relies on anything in the DOM right away, run the script at the end of the body
+- in general, JavaScript won't throw exceptions for type conversion stuff; it will just do its best (which normally works but normally does really weird stuff)
+
+### Startup JavaScript:
+- have fake Websocket stuff - look at setInterval function for example of how to 
+- look at login.js for how to store stuff in local storage - associated with domain name and port
+- localStorage.getItem() null operator alt value - find line of code in example
+- if you're running a function that will freeze stuff up (like playing a sound), need to have it be async - use 
+
+## Midterm Review
+- await() blocks until it comes back
+- know a couple console commands - chmod changes the mode so, for example, an executable can run
+- know DNS record things - SOA, TXT, CNAME, A
+- turn BYU text blue `<div class="header">BYU</div>` would be `div.header{...}`
+- Padding: around the content
+- Arrow syntax - if it's all on the same line, it just returns that value - don't need to tell it to return
+- Pre-increment and post-increment is a thing in JavaScript
+- DOM textContent - creates a text node child with the text. If the element had children before, blows those children away. Basically, just sets the text for an element
+JS functions:
+YES:
+- const f = (x) => {}
+- function f(x) {}
+- const f = function(x) {}
+NO:
+- function f(x) = {}
+
+- Outside in - marriage before pals
+- Regex: v.match(/A|f/i)  -- anything on the inside of the slashes is the regular expression. The outside is a flag
+- then/catch/finally -- if what it calls has a timeout, the rest of the code will keep moving, and it'll do the then/catch/finally later when it comes back
+- JavaScript: {x:1}. JSON: {"x":1} (must be string, MUST BE DOUBLE QUOTES)
+- DNS Subdomain: c260.cs.byu.edu
+- column-reverse: puts the column elements in reverse
+
+## LOOK AT:
+- arrow syntax
+
+## Arrow syntax:
+(parameters) => {function}
+```
+// standard syntax
+a.sort(function (v1, v2) {
+    return v1 - v2;
+})
+// arrow function syntax
+a.sort((v1, v2) => v1 - v2);
+```
+Same line - doesn't need a return statement:
+
+```
+() => 3; //returns 3
+
+() => {
+    3; //returns undefined
+}
+
+() => {
+    return 3; //returns 3
+}
+
+```
+# How does the Internet Work?
+- URL --> goes to the Domain Name System (DNS) to look up the IP address
+- DNS record - part of a big registry that tells how to get to the IP address from a name
+- Use the IP address to talk to the server
+- IP addresses are leased -- can't buy them
+Layer Example Purpose
+- Application - HTTPS - Functionality like web browsing
+- Transport - TCP/UDP - Moving connection information packets
+- Internet - IP - Establishing connections
+- Link - Fiber, hardware - Physical connections
+Cont.
+- TCP: makes sure all data is received in the order it's sent. Expensive, lots of handshaking back and forth. Ex. downloading a video. If stuff comes in the wrong order, everything will be messed up
+- UDP: faster, but stuff might get missed, or out of order
+Server vs. Service:
+- Server: the hardware (?) - the laptop, ex. that's doing it
+- Service: software that's running on the hardware server
+Ports:
+- IP address gets you to the machine, but need to do different things with the machine
+- machine must be listening on the port to make a connection
+- It's like piers on the dock
+- Certain ports are assigned for certain things (by the internet authority?), ex. port 443 for https, port 80 for http, etc. Every major protocol has a different port it's assigned by default
+- Each port is like a way into a house. You want to keep most closed most of the time.
+Caddy:
+- one port goes to a gateway
+- caddy moves you to another port based on what you're doing - ex. simon.domainname vs. startup.domainname
+Misc:
+- Example top level domains: com, org, uk, click, gold
+- localhost: 127.0.0.1
+DNA record tyes:
+- A/AAAA: Address. Specific IP addresses
+- CNAME: Canonical name. Alias
+- NS: Name server. Authority for queries and proof of ownership
+- TEXT: Metadata. Used for policies and verification.
+- SOA: Start of authority. Propagation information
+
 # Deploying Simon to Start-Up Website:
 `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
 
