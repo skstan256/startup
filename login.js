@@ -3,3 +3,4 @@ function login() {
     localStorage.setItem("username", nameEl.value);
     window.location.href = "home.html";
 }
+
