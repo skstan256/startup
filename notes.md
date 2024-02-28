@@ -513,9 +513,34 @@ https 443 -^          \> HTTP 4000 Start up
 
 Only Caddy can talk to ports 3000 and 4000
 ## URL: Uniform Resource Locator
-Scheme Domain   Port Path   Param. Anchor
-https://byu.edu:443/api/city?q=pro#3
+Scheme   Domain   Port Path     Param. Anchor
+https:// byu.edu :443 /api/city ?q=pro #3
 
+Anchor 
+## Ports
+TODO: get list from slides
+
+## Requests
+Method  Path          Version
+POST /api/city?q=provo HTTP/1.1
+Host: cs260.click
+User-Agent: curl/7.77.0  <- Header
+...
+
+{"user":"tim"}  <- Body
+
+Types:
+- get: get existing
+- post: create new resource
+- put: update current
+- (TODO: GET THE REST)
+
+Status Codes:
+- 2XX: 200 Success
+- 3XX: 301/302 Redirect
+- 4XX: Bad request
+- 5XX: Server Error
+- 
 
 
 
