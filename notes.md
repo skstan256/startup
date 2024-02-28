@@ -486,6 +486,40 @@ DNA record tyes:
 - TEXT: Metadata. Used for policies and verification.
 - SOA: Start of authority. Propagation information
 
+# Web Services - Fetch, URL, ports, HTTP
+## Fetch
+- throw it out, then use the callback function when it comes back
+- response object comes back - you get the actual content by calling .text
+```
+fetch('url')
+.then(r => r.text())  # 
+.then(j => console.log(j.value))
+```
+- needs an API
+- check, with your API, that it doesn't need payment or an API key
+```
+const r = await fetch('url')
+const j = await r.json()
+console.log(j.content)
+```
+- fetch returns a promise, that, when it's fulfilled, has the content you requested
+- FIGURE OUT IF MOST ONCLICK FUNCTIONS SHOULD BE ASYNC (use promises or await)
+- 3rd party request
+- objects have methods, services have endpoints
+- always have some sort of fallback - use nullish coalescing, try/catch
+SSH 22 -> sshd
+http 80 -> Caddy -> HTTP 3000 Simon
+https 443 -^          \> HTTP 4000 Start up
+
+Only Caddy can talk to ports 3000 and 4000
+## URL: Uniform Resource Locator
+Scheme Domain   Port Path   Param. Anchor
+https://byu.edu:443/api/city?q=pro#3
+
+
+
+
+
 # Deploying Simon to Start-Up Website:
 `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
 
