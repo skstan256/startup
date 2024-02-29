@@ -1,6 +1,10 @@
 function setUsername() {
     const usernameEl = document.querySelector('#usernameDisplay');
-    usernameEl.textContent = localStorage.getItem('username') ?? 'Anonymous';
+    displayUsername = localStorage.getItem('username')
+    if (displayUsername.length === 0) {
+        displayUsername = "Anonymous"
+    }
+    usernameEl.textContent = displayUsername
 }
 
 function demoReminder() {
@@ -39,7 +43,7 @@ function addThought() {
     thoughtLog.appendChild(thought);
     thoughtText.value = '';
     // save thought to local storage
-    
+
 }
 
 
