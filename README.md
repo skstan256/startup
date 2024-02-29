@@ -66,13 +66,14 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 
 ## JavaScript Deliverable
 - [x] done - Prerequisite: Javascript Simon deployed
-- [x] done - Prerequisite: Name and link to Github displayed on every page
-- [ ] Have Javascript that takes user input and adds it to mocked database data: The user can add thoughts to the project thought log, which will be saved to local storage as a mock of being added to the database
-- [x] done - Have JavaScript that reads the login input and displays the username: The username is read in and displayed on the home and project pages.
-- [ ] Have JavaScript that mocks your database data and injects it into the DOM: JavaScript injects demo thoughts to the project thought log, which is a mock of them being retrieved from the database
-- [x] done - Use the `localstorage` API to keep data between pages and browser sessions: the username is stored in localstorage and persists between the home page and project page. If you were to open the program up to the home or project page in a different browser session, the username would also be persistent (going through the login page resets it). Thoughts in the thought log are also peristent.
+- [x] done - Prerequisite: Name and link to Github displayed on home page
+- [x] done - Prerequisite: Notes in README (you're currently reading them)
+- [x] done - Have Javascript that takes user input and adds it to mocked database data: The user can add thoughts to the project thought log, which will be saved to local storage as a mock of being added to the database
+- [x] done - Have JavaScript that reads the login input and displays the username: The username is read in and displayed on the home and project pages
+- [x] done - Have JavaScript that mocks your database data and injects it into the DOM: JavaScript injects demo thoughts to the project thought log, which is a mock of them being retrieved from the database
+- [x] done - Use the `localstorage` API to keep data between pages and browser sessions: the username is stored in localstorage and persists between the home page and project page. If you were to open the program up to the home or project page in a different browser session, the username would also be persistent (going through the login page resets it). Thoughts in the thought log are also peristent. (You have to click out of the demo reminder before they load... still working on fixing that bug)
 - [x] done - Have JavaScript that mocks out the realtime data you expect to get from the server using WebSocket and inject it into the DOM: There is JavaScript that triggers when the project page is open, showing a mock example of a reminder alert.
-## RE-ENABLE YOUR REMINDER ALERTS!!!!!!!!!!
+
 
 
 [Link to notes page](notes.md)
