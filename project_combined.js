@@ -43,7 +43,7 @@ function addThought() {
     thoughtLog.appendChild(thought);
     thoughtText.value = '';
     // save thought to local storage
-
+    
 }
 
 
