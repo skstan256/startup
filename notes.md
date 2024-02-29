@@ -545,8 +545,9 @@ Status Codes:
 
 
 
-# Deploying Simon to Start-Up Website:
-`./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
+# Deploying to Start-Up Website:
+Simon: `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
+Start-Up: `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s startup`
 
 # Misc.
 - FOR YOUR HTML PROJECT, DON'T FORGET TO UPDATE THE README
