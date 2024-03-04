@@ -540,7 +540,47 @@ Status Codes:
 - 3XX: 301/302 Redirect
 - 4XX: Bad request
 - 5XX: Server Error
+
+## Express - Java wrapper for requests
+Five major objects:
+- express
+- app - express application
+- req - request object
+- res - response object
+- router - adding child routing
+
+`npm init -y` 
+
+`npm install express`
+
+(also in slides)
+
+`const express = require('express');` 
+
+`app.get('*', (req, res)...`
+
+- you can have it running, then hit a breakpoint on your backend, then take you back
+- http: client sends a request, server sends a response
+- express: creates two Javascript objects that represent the request and response
+- browser/client/frontend -> service/server/backend
+- res.redirect(...), other methods: .sendFile(), .status().send()
+
+### Middleware
+- req -> middleware -> next  -->  req -> middleware -> response
+- syntax: `app.use([path,] callback(req, res, next))`
+- path is what it matches to
+- everything that matches will be added to a linked list
+- only one can send a response - it will move on/wait forever if nobody responds, and it will crash if more than one responds
+- it's easy to get confused on if you're doing stuff on the frontend or the backend - ex. it might log on the backend
+- order of the functions matters! Whichever functions match will be added to that list and run in order
+- DEBUGGING FRONT: DO IN CHROME BROWSER. DEBUGGING BACK: DO IN VS CODE
+
+### Static Files
+`app.use(express.static('public', {root : __dirname}));`
+- It can load up files that you've deployed
+- In the assignment stuff and simon, THERE'S A NEW STYLE OF DEPLOY FILE - have to edit it and 
 - 
+
 
 
 
@@ -556,5 +596,8 @@ Start-Up: `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s start
 - Code Pen has debug mode
 - look into fly-cut for mac
 - the browser just loads one html page. Everything starts from there - calling cs files and JavaScript files
+
+
+might have to run 
 
 
