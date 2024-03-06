@@ -579,7 +579,45 @@ Five major objects:
 `app.use(express.static('public', {root : __dirname}));`
 - It can load up files that you've deployed
 - In the assignment stuff and simon, THERE'S A NEW STYLE OF DEPLOY FILE - have to edit it and 
-- 
+
+
+## Service Design
+### UML Diagram:
+- sequencediagram.org
+- stores a diagram in a URL
+- make a diagram if you're having trouble with frontend vs backend
+- http: from user to server; web socket: from server to user
+### Examples of service endpoints:
+- Create account
+- Login
+- Logout
+- Get user (figure out which user credentials belong to)
+- Get scores
+- Save scores
+### Leverage Standards: don't try to write everything yourself
+- Transfer protocols - HTTP, HTTPS, UDP
+- HTTP verbs - GET, PUT, POST, DELETE
+- MIME types - application/json, image/png
+- HTTP headers - cache, accept, cors
+- Data format - JSON, YAML
+Have a very good reason for going away from these standard tools - it could end up costing big points
+
+### Endpoint Design:
+- Endpoints - like a method or function
+Rules:
+- Grammatical - noun/resource based - verbs are used for actions and don't appear in names for things, etc.
+- Readable - /store/provo/order/28502 - design stuff so people can read what it is - a specific order from provo
+- Simple - single responsibility principle - it does one thing, and it does it well
+- Documented - Open API - you can keep your documentation there
+- ^ Not expected to do this for this class, but in a professional setting, you would
+- See if the RLL uses this? Or should?
+### Three Styles of Endpoints
+- Remote procedure call (RPC) - only one endpoint, and you tell the endpoint which command to execute with which parameters (see slides for code) - basically like a huge switch statement, which can get messy
+- Representational State Transfer (REST) - nobody actually does REST right. When they say they're doing REST, they mean they're taking advantage of HTTP as much as possible - verbs as actions, readable paths made out of nouns - but that's only a part of REST
+- GraphQL - put all of the logic onto the client and give them full access to the data. Just have one endpoint, tell the client how to format requests -kinda like SQL queries
+### Cross Site Request Forgery:
+- log on to false website, which puts requests to the normal website and funnels it back
+- same origin policy
 
 
 
@@ -598,6 +636,5 @@ Start-Up: `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s start
 - the browser just loads one html page. Everything starts from there - calling cs files and JavaScript files
 
 
-might have to run 
 
 
