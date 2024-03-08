@@ -619,6 +619,12 @@ Rules:
 - log on to false website, which puts requests to the normal website and funnels it back
 - same origin policy
 
+## Express:
+Express provides support for:
+- Routing requests for service endpoints
+- Manipulating HTTP requests with JSON body content
+- Generating HTTP responses
+- Using middleware to add functionality
 
 
 
