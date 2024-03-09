@@ -626,7 +626,32 @@ Express provides support for:
 - Generating HTTP responses
 - Using middleware to add functionality
 
+## Daemons and Debugging
+- Code is running in TWO PLACES:
+- Frontend: Chrome - use Chrome debugger - you have to change actual code IN VS CODE though - refresh web page when you update the frontend code
+- Backend: Node.js - use VS Code debugger
+- don't lose track of what's running where!
+- see slides for test project code
+- TODO: put frontend code in a public directory (easy way to organize it)
+- TODO: put backend code in the root
+- WE WON'T BE USING LIVE SERVER ANYMORE - WE'RE LAUNCHING OUR OWN SERVER
+- crucial: `app.use(express.static('public'));`
+- update frontend code: don't restart the server; refresh the web page
+- update backend code: restart server
+- YOU CAN SET A BREAKPOINT MIDWAY THROUGH A LINE
+- RUN NODE JS: from VS Code - can run or debug
+- with Express, you can just give it a JavaScript object and it will turn it into JSON for you
+- there are no functions or undefined in JSON
+- f2: rename
+- from the browser, you can't hide your frontend code, but it does hide your background code
+- you use your backend code
+- nodemon: look at instructions if you want to use it
 
+### Daemons - PM2
+- a gremlin-like program not associated with any user so that it keeps running in the background
+- YOU HAVE TO DEPLOY A SERVICE, NOT JUST THE FRONTEND NOW - `deployService.sh` or similar
+- `pm2 save`
+- THE DAEMON PM2 STUFF IS ALREADY SET UP FOR SIMON AND STARTUP - shouldn't have to touch pm2 at all - in the `deployService.sh`
 
 
 # Deploying to Start-Up Website:
