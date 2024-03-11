@@ -653,6 +653,17 @@ Express provides support for:
 - `pm2 save`
 - THE DAEMON PM2 STUFF IS ALREADY SET UP FOR SIMON AND STARTUP - shouldn't have to touch pm2 at all - in the `deployService.sh`
 
+## Deployment
+- In case of system failure, you can debug in the production environment, but GO BACK AND CHANGE IT IN THE DEVELOPMENT ENVIRONMENT! NEVER make 'permanent' changes in the production environment. The next time you push, you'll erase it.
+Github -trigger-> Continuous integration --testing,auto-deploy-> staging
+                                          '--manual-deploy-> production
+- continuous deployment is also a thing
+- interruptive deployment: stop, replace, start, pray it works
+- rolling drain and replace: multiple servers with load balancer; drain, stop, start...repeat -- basically, have multiple servers going, then stop all requests to a specific server (let it 'drain'), so you can safely stop it, update it, start it again, then move on to the next one
+- canary: gradual with error monitoring -- sends like 99% of traffic to old version and 1% to new version. If it still works, have the load balancer gradually increase the traffic going to the new version, then tear the old one down
+- blue/green: have two different production environments -- one new version, one old version. If the new version fails, fall back on the blue. You can also have one for staging, then switch to production
+- A/B: for doing marketing tests, etc. -- based on some criteria, the load balancer sends some traffic to B instead of A
+- 
 
 # Deploying to Start-Up Website:
 Simon: `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
