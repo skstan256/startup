@@ -663,11 +663,13 @@ Github -trigger-> Continuous integration --testing,auto-deploy-> staging
 - canary: gradual with error monitoring -- sends like 99% of traffic to old version and 1% to new version. If it still works, have the load balancer gradually increase the traffic going to the new version, then tear the old one down
 - blue/green: have two different production environments -- one new version, one old version. If the new version fails, fall back on the blue. You can also have one for staging, then switch to production
 - A/B: for doing marketing tests, etc. -- based on some criteria, the load balancer sends some traffic to B instead of A
-- 
+
+## Uploading Files
+
 
 # Deploying to Start-Up Website:
-Simon: `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
-Start-Up: `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s startup`
+Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
+Start-Up: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s startup`
 
 # Misc.
 - FOR YOUR HTML PROJECT, DON'T FORGET TO UPDATE THE README
