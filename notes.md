@@ -540,14 +540,145 @@ Status Codes:
 - 3XX: 301/302 Redirect
 - 4XX: Bad request
 - 5XX: Server Error
-- 
+
+## Express - Java wrapper for requests
+Five major objects:
+- express
+- app - express application
+- req - request object
+- res - response object
+- router - adding child routing
+
+`npm init -y` 
+
+`npm install express`
+
+(also in slides)
+
+`const express = require('express');` 
+
+`app.get('*', (req, res)...`
+
+- you can have it running, then hit a breakpoint on your backend, then take you back
+- http: client sends a request, server sends a response
+- express: creates two Javascript objects that represent the request and response
+- browser/client/frontend -> service/server/backend
+- res.redirect(...), other methods: .sendFile(), .status().send()
+
+### Middleware
+- req -> middleware -> next  -->  req -> middleware -> response
+- syntax: `app.use([path,] callback(req, res, next))`
+- path is what it matches to
+- everything that matches will be added to a linked list
+- only one can send a response - it will move on/wait forever if nobody responds, and it will crash if more than one responds
+- it's easy to get confused on if you're doing stuff on the frontend or the backend - ex. it might log on the backend
+- order of the functions matters! Whichever functions match will be added to that list and run in order
+- DEBUGGING FRONT: DO IN CHROME BROWSER. DEBUGGING BACK: DO IN VS CODE
+
+### Static Files
+`app.use(express.static('public', {root : __dirname}));`
+- It can load up files that you've deployed
+- In the assignment stuff and simon, THERE'S A NEW STYLE OF DEPLOY FILE - have to edit it and 
 
 
+## Service Design
+### UML Diagram:
+- sequencediagram.org
+- stores a diagram in a URL
+- make a diagram if you're having trouble with frontend vs backend
+- http: from user to server; web socket: from server to user
+### Examples of service endpoints:
+- Create account
+- Login
+- Logout
+- Get user (figure out which user credentials belong to)
+- Get scores
+- Save scores
+### Leverage Standards: don't try to write everything yourself
+- Transfer protocols - HTTP, HTTPS, UDP
+- HTTP verbs - GET, PUT, POST, DELETE
+- MIME types - application/json, image/png
+- HTTP headers - cache, accept, cors
+- Data format - JSON, YAML
+Have a very good reason for going away from these standard tools - it could end up costing big points
+
+### Endpoint Design:
+- Endpoints - like a method or function
+Rules:
+- Grammatical - noun/resource based - verbs are used for actions and don't appear in names for things, etc.
+- Readable - /store/provo/order/28502 - design stuff so people can read what it is - a specific order from provo
+- Simple - single responsibility principle - it does one thing, and it does it well
+- Documented - Open API - you can keep your documentation there
+- ^ Not expected to do this for this class, but in a professional setting, you would
+- See if the RLL uses this? Or should?
+### Three Styles of Endpoints
+- Remote procedure call (RPC) - only one endpoint, and you tell the endpoint which command to execute with which parameters (see slides for code) - basically like a huge switch statement, which can get messy
+- Representational State Transfer (REST) - nobody actually does REST right. When they say they're doing REST, they mean they're taking advantage of HTTP as much as possible - verbs as actions, readable paths made out of nouns - but that's only a part of REST
+- GraphQL - put all of the logic onto the client and give them full access to the data. Just have one endpoint, tell the client how to format requests -kinda like SQL queries
+### Cross Site Request Forgery:
+- log on to false website, which puts requests to the normal website and funnels it back
+- same origin policy
+
+## Express:
+Express provides support for:
+- Routing requests for service endpoints
+- Manipulating HTTP requests with JSON body content
+- Generating HTTP responses
+- Using middleware to add functionality
+
+## Daemons and Debugging
+- Code is running in TWO PLACES:
+- Frontend: Chrome - use Chrome debugger - you have to change actual code IN VS CODE though - refresh web page when you update the frontend code
+- Backend: Node.js - use VS Code debugger
+- don't lose track of what's running where!
+- see slides for test project code
+- TODO: put frontend code in a public directory (easy way to organize it)
+- TODO: put backend code in the root
+- WE WON'T BE USING LIVE SERVER ANYMORE - WE'RE LAUNCHING OUR OWN SERVER
+- crucial: `app.use(express.static('public'));`
+- update frontend code: don't restart the server; refresh the web page
+- update backend code: restart server
+- YOU CAN SET A BREAKPOINT MIDWAY THROUGH A LINE
+- RUN NODE JS: from VS Code - can run or debug
+- with Express, you can just give it a JavaScript object and it will turn it into JSON for you
+- there are no functions or undefined in JSON
+- f2: rename
+- from the browser, you can't hide your frontend code, but it does hide your background code
+- you use your backend code
+- nodemon: look at instructions if you want to use it
+
+### Daemons - PM2
+- a gremlin-like program not associated with any user so that it keeps running in the background
+- YOU HAVE TO DEPLOY A SERVICE, NOT JUST THE FRONTEND NOW - `deployService.sh` or similar
+- `pm2 save`
+- THE DAEMON PM2 STUFF IS ALREADY SET UP FOR SIMON AND STARTUP - shouldn't have to touch pm2 at all - in the `deployService.sh`
+
+## Deployment
+- In case of system failure, you can debug in the production environment, but GO BACK AND CHANGE IT IN THE DEVELOPMENT ENVIRONMENT! NEVER make 'permanent' changes in the production environment. The next time you push, you'll erase it.
+Github -trigger-> Continuous integration --testing,auto-deploy-> staging
+                                          '--manual-deploy-> production
+- continuous deployment is also a thing
+- interruptive deployment: stop, replace, start, pray it works
+- rolling drain and replace: multiple servers with load balancer; drain, stop, start...repeat -- basically, have multiple servers going, then stop all requests to a specific server (let it 'drain'), so you can safely stop it, update it, start it again, then move on to the next one
+- canary: gradual with error monitoring -- sends like 99% of traffic to old version and 1% to new version. If it still works, have the load balancer gradually increase the traffic going to the new version, then tear the old one down
+- blue/green: have two different production environments -- one new version, one old version. If the new version fails, fall back on the blue. You can also have one for staging, then switch to production
+- A/B: for doing marketing tests, etc. -- based on some criteria, the load balancer sends some traffic to B instead of A
+
+## Uploading Files
+### This is a bad idea because...
+- limited space
+- no backup
+- servers are transient
+- multiple servers hosting data
+Instead, use a storage service
+- AWS S3
+- Persistent database
+- Memory database
 
 
 # Deploying to Start-Up Website:
-Simon: `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
-Start-Up: `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s startup`
+Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
+Start-Up: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s startup`
 
 # Misc.
 - FOR YOUR HTML PROJECT, DON'T FORGET TO UPDATE THE README
@@ -556,5 +687,7 @@ Start-Up: `./deployFiles.sh -k /Users/sarah/cs260.pem -h webbrain.click -s start
 - Code Pen has debug mode
 - look into fly-cut for mac
 - the browser just loads one html page. Everything starts from there - calling cs files and JavaScript files
+
+
 
 
