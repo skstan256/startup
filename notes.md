@@ -665,6 +665,15 @@ Github -trigger-> Continuous integration --testing,auto-deploy-> staging
 - A/B: for doing marketing tests, etc. -- based on some criteria, the load balancer sends some traffic to B instead of A
 
 ## Uploading Files
+### This is a bad idea because...
+- limited space
+- no backup
+- servers are transient
+- multiple servers hosting data
+Instead, use a storage service
+- AWS S3
+- Persistent database
+- Memory database
 
 
 # Deploying to Start-Up Website:
