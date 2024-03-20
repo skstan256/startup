@@ -697,10 +697,23 @@ Instead, use a storage service
 - LOOK AT SLIDES FOR TESTING CONNECTION CODE, INSERTING DATA CODE
 - store your credentials in a config file **and then add that file to gitignore!!**
 
-
 ### Scratch - how to organize database ideas
 - user -> projects, username, password
 - project -> thought log, reminders, to-do list
+
+## Automated Testing
+- Development-only dependencies are a thing
+### Frontend (Playwright)
+- It can go through and emulate steps - so you don't have to log in and play to step 35 to test
+- UI Testing - Playwright
+  - getByTestId - test ids are different from the normal ids, so if you change the normal ids, the test id is still there
+  - getByRole - can select a button, etc.
+- Device Testing - Browser Stack
+- See slides for code
+### Backend/Endpoint (Jest)
+- see slides for code
+- jest just kinda inserts itself into things
+- supertest (like jest's little brother) starts up the server so jest can run its stuff - `request(app)`
 - 
 
 # Deploying to Start-Up Website:
