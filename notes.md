@@ -602,7 +602,7 @@ Five major objects:
 - Data format - JSON, YAML
 Have a very good reason for going away from these standard tools - it could end up costing big points
 
-### Endpoint Design:
+## Endpoint Design:
 - Endpoints - like a method or function
 Rules:
 - Grammatical - noun/resource based - verbs are used for actions and don't appear in names for things, etc.
@@ -675,6 +675,46 @@ Instead, use a storage service
 - Persistent database
 - Memory database
 
+## Databases:
+- relational queries, ex. MySQL
+- memory cached objects, ex. Redis
+- ranked free text (free text search), ElasticSearch
+- JSON objects, MongoDB
+- key value pairs, DynamoDB
+- graph based data, Neo4J
+- time series data, InfluxDB
+
+### Structure of Mongo:
+- basically an array of JSON objects (called documents)
+- you can embed documents in other documents
+
+## Getting set up
+- WATCH VIDEO (the one open on YouTube)
+- GO THROUGH THE SLIDES - DON'T FORGET THE CREDENTIAL PART (AND IGNORING THE CREDENTIALS ON GIT)
+- `npm init -y`
+- `npm install mongodb` (or install mongo? look at slides and stuff)
+- LOOK AT SLIDES FOR JS CODE FOR MONGO
+- LOOK AT SLIDES FOR TESTING CONNECTION CODE, INSERTING DATA CODE
+- store your credentials in a config file **and then add that file to gitignore!!**
+
+### Scratch - how to organize database ideas
+- user -> projects, username, password
+- project -> thought log, reminders, to-do list
+
+## Automated Testing
+- Development-only dependencies are a thing
+### Frontend (Playwright)
+- It can go through and emulate steps - so you don't have to log in and play to step 35 to test
+- UI Testing - Playwright
+  - getByTestId - test ids are different from the normal ids, so if you change the normal ids, the test id is still there
+  - getByRole - can select a button, etc.
+- Device Testing - Browser Stack
+- See slides for code
+### Backend/Endpoint (Jest)
+- see slides for code
+- jest just kinda inserts itself into things
+- supertest (like jest's little brother) starts up the server so jest can run its stuff - `request(app)`
+- 
 
 # Deploying to Start-Up Website:
 Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
