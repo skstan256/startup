@@ -714,7 +714,19 @@ Instead, use a storage service
 - see slides for code
 - jest just kinda inserts itself into things
 - supertest (like jest's little brother) starts up the server so jest can run its stuff - `request(app)`
-- 
+
+## WebSocket
+- HTTP protocol can really only go to from the client to the server. The server can't talk to the client, just reply when the client asks for something
+- WebSocket: starts from a client, goes to the server, asks to update from a HTTP to a WebSocket protocol
+- Live Server actually uses WebSocket - pushes the new code to the browser
+- LOOK AT SLIDES TO GET CODE FOR WEBSOCKET
+- your server needs to keep track of all the web socket connections it has (
+- request/response: HTTP
+- WebSocket - real time response, notifications
+- It'll kill the connection if there's too long of a pause, so you can do ping/pong to say 'I'm still alive'
+- You don't go directly between clients - each client talks to the server, which talks to the other clients
+- You initially connect on a certain port, but then they move you to another port
+- `const protocol = window.location.protocol === 'http:'? 'ws' : 'wss';`
 
 # Deploying to Start-Up Website:
 Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
