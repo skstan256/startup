@@ -714,7 +714,67 @@ Instead, use a storage service
 - see slides for code
 - jest just kinda inserts itself into things
 - supertest (like jest's little brother) starts up the server so jest can run its stuff - `request(app)`
-- 
+
+## WebSocket
+- HTTP protocol can really only go to from the client to the server. The server can't talk to the client, just reply when the client asks for something
+- WebSocket: starts from a client, goes to the server, asks to update from a HTTP to a WebSocket protocol
+- Live Server actually uses WebSocket - pushes the new code to the browser
+- LOOK AT SLIDES TO GET CODE FOR WEBSOCKET
+- your server needs to keep track of all the web socket connections it has (
+- request/response: HTTP
+- WebSocket - real time response, notifications
+- It'll kill the connection if there's too long of a pause, so you can do ping/pong to say 'I'm still alive'
+- You don't go directly between clients - each client talks to the server, which talks to the other clients
+- You initially connect on a certain port, but then they move you to another port
+- `const protocol = window.location.protocol === 'http:'? 'ws' : 'wss';`
+
+## Security
+OWASP: Open Worldwide Application Security Project
+As disciples of Jesus Christ, we should care about this stuff! It affects real people's lives!
+OWASP 10:
+1. Broken access control - URL bypass control - if you know the magic URL, it doesn't check if you're actually authorized and allows you to access content in someone else's account. Resource path allows access -- using '.' in paths to get out of the directory you're supposed to
+2. Cryptographic failures
+   - transmitting data as clear text
+   - not encrypting at rest (when it's stored persistently) or transit
+   - weak cryptography (SHA1, MD5)
+   - misused cryptography (no salt, wrong params)
+3. Injection
+   - user supplied data is not sanitized and is programatically executed
+4. Insecure Design
+   - Not aware of best practices
+   - Unlimited trial accounts - people sign up over and over again - DOS attack (denial of service)
+   - Customer data not segmented - just in one attractive target
+   - Single layer defense
+5. Security Misconfiguration
+   - Development info exposed - ex. printing the stack trace 
+   - Using default configurations
+   - Unnecessary features installed - increases attack surface area
+   - System not hardened - not cleaning up and looking at every parameter
+6. Vulnerable Components
+   - Unnecessary/unused packages imported
+   - Untrusted/verified sources
+   - Out of date software
+   - Not tracking vulnerability bulletins
+   - Package versions not locked
+7. ID and Auth Failures
+   - Credential stuffing (compromised list) - can stop it by throttling number of passwords
+   - Brute force attacks (guess a password)
+   - Permitting weak passwords
+   - Weak credential recovery
+   - Credentials in URL
+   - Not expiring auth tokens
+8. Software Integrity Failures
+   - Unverified CDN usage
+   - Unverified packages (nmp install)
+   - Unverified updates
+   - Insecure CD/CI platforms
+9. Logging failure
+   - not logging critical requests
+   - not monitoring system performance
+   - logs not audited
+10. Server Side Request Forgery
+
+The line of death: the host name is the only thing you can trust (and even then it can be misleading)
 
 # Deploying to Start-Up Website:
 Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
@@ -727,6 +787,8 @@ Start-Up: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s sta
 - Code Pen has debug mode
 - look into fly-cut for mac
 - the browser just loads one html page. Everything starts from there - calling cs files and JavaScript files
+## Misc. MongoDB Notes
+- Can open a JavaScript debug terminal in VS Code, then run `node <filename>`
 
 
 
