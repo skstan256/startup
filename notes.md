@@ -787,6 +787,8 @@ Start-Up: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s sta
 - Code Pen has debug mode
 - look into fly-cut for mac
 - the browser just loads one html page. Everything starts from there - calling cs files and JavaScript files
+## Misc. MongoDB Notes
+- Can open a JavaScript debug terminal in VS Code, then run `node <filename>`
 
 
 
