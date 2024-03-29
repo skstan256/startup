@@ -75,6 +75,8 @@ apiRouter.get('/user/:username', async (req, res) => {
   res.status(404).send({msg: 'Unknown'});
 });
 
+
+
 // secureApiRouter that verifies credentials for endpoints
 var secureApiRouter = express.Router();
 apiRouter.use(secureApiRouter);
@@ -107,6 +109,15 @@ function setAuthCookie(res, authToken) {
     sameSite: 'strict',
   });
 }
+
+// get user data
+secureApiRouter.get('/home/data', async (req, res) => {
+  authToken = req.cookies[authCookieName];
+  const user = await db.getUserByToken(authToken);
+  const userData = await db.getUserData(user.userDataID);
+  console.log('Sending User Data');
+  res.send(userData);
+});
 
 app.listen(port, function () {
     console.log(`Listening on port ${port}`);

@@ -29,6 +29,7 @@ function getUserByToken(token) {
    return credentials.findOne({token: token});
 }
 
+
 async function createUser(username, password) {
    // create a document containing user data
    const userDataDoc = {};
@@ -52,10 +53,12 @@ async function createUser(username, password) {
 
 // TODO: figure out if checking token here would be better (more secure)
 async function getUserData(userDataID) {
-   return userData.findOne({_id: userDataID})
+   return userData.findOne({_id: userDataID});
 }
 
-async function updateUserData(userDataID) {
+async function updateUserData(userDataID, newData) {
+   // TODO: maybe eventually update smarter than replacing the whole thing...
+   userData.replaceOne({_id: userDataID}, newData);
 
 }
 
@@ -65,5 +68,6 @@ module.exports = {
    getUserByToken,
    createUser,
    getUserData,
+   updateUserData,
 }
 
