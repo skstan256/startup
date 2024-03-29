@@ -23,6 +23,12 @@ async function loginOrCreate(endpoint) {
     }
     else {
         // TODO: figure this part out (look at Simon's login.js)
+        const body = await response.json();
+        const modalEl = document.querySelector('#msgModal');
+        modalEl.querySelector('.modal-body').textContent = `Error: ${body.msg}`;
+        const msgModal = new bootstrap.Modal(modalEl, {});
+        msgModal.show();
+        // YOU ARE HERE
     }
     
 }
