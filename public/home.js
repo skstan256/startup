@@ -15,6 +15,7 @@ async function getUserProjects() {
         localStorage.setItem('userData', JSON.stringify(userData));
         console.log('Received user data')
         // TODO: FINISH - DISPLAY USER PROJECTS
+        // access by key
     }
     else {
         // TODO: figure this part out (look at Simon's login.js)
@@ -41,7 +42,7 @@ async function createProject() {
     const projects = document.querySelector('#projects');
     projects.append(rowEl);
     name.textContent = '';
-    const response = await fetch('/home/create', {
+    const response = await fetch('/api/home/create', {
         method: 'post',
         body: JSON.stringify({projectName: name}),
         headers: {
@@ -55,5 +56,5 @@ async function createProject() {
 }
 
 // RUN AT START
-getUserData();
+getUserProjects();
 

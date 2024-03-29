@@ -115,7 +115,8 @@ secureApiRouter.get('/home/projects', async (req, res) => {
   authToken = req.cookies[authCookieName];
   if (authToken) {
     const projectDisplays = await db.getUserProjects(authToken);
-    res.send(projectDisplays);
+    // YOU ARE HERE: STRINGIFY PROJECT DISPLAYS?
+    res.send({projectDisplays: projectDisplays});
     console.log('Sent User Projects');
   }
   else {
