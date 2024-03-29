@@ -8,7 +8,8 @@ const client = new MongoClient(url);
 const db = client.db('startup')
 
 const credentials = db.collection('credentials');
-const userData = db.collection('userData');
+//const userData = db.collection('userData');
+const projects = db.collection('projects');
 
 // REMEMBER TO ADD NEW FUNCTIONS TO MODULE.EXPORTS AT THE BOTTOM
 
@@ -32,7 +33,9 @@ function getUserByToken(token) {
 
 async function createUser(username, password) {
    // create a document containing user data
-   const userDataDoc = {};
+   const userDataDoc = {
+      projects: []
+   };
    await userData.insertOne(userDataDoc);
    const userDataID = userDataDoc._id;
 
@@ -43,6 +46,7 @@ async function createUser(username, password) {
       username: username,
       password: passwordHash,
       userDataID: userDataID,
+      projects: [],
       token: uuid.v4(),
    };
 
@@ -51,8 +55,23 @@ async function createUser(username, password) {
    return user;
 }
 
+async function createProject(token) {
+   // get user data
+   
+   const projectDoc = {
+      thoughtLog: [],
+      toDoList: [],
+      reminders: []
+   };
+   // TODO: FINISH
+}
 // TODO: figure out if checking token here would be better (more secure)
 async function getUserData(userDataID) {
+   return userData.findOne({_id: userDataID});
+}
+
+async function getUserDataIDByToken(token) {
+
    return userData.findOne({_id: userDataID});
 }
 
@@ -69,5 +88,6 @@ module.exports = {
    createUser,
    getUserData,
    updateUserData,
+   createProject,
 }
 

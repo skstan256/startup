@@ -40,6 +40,7 @@ async function createProject() {
     const projects = document.querySelector('#projects');
     projects.append(rowEl);
     name.textContent = '';
+    // add to 
 }
 
 // RUN AT START
