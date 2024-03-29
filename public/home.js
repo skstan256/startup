@@ -22,6 +22,26 @@ async function getUserData() {
     
 }
 
+async function createProject() {
+    const name = document.querySelector('#project-field');
+    const nameEl = document.createElement('td');
+    nameEl.textContent = name.value;
+    const dateAccessed = document.createElement('td');
+    // TODO: IMPLEMENT DATE ACCESSED
+    dateAccessed.textContent = '---'
+    const buttons = document.createElement('td');
+    buttons.innerHTML = '<button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button><button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button>';
+    // append all the parts to the row
+    const rowEl = document.createElement('tr');
+    rowEl.append(nameEl);
+    rowEl.append(dateAccessed);
+    rowEl.append(buttons);
+    // append the row to the project list
+    const projects = document.querySelector('#projects');
+    projects.append(rowEl);
+    name.textContent = '';
+}
+
 // RUN AT START
 getUserData();
 

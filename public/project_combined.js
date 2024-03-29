@@ -56,7 +56,7 @@ function addThought() {
     const thoughtText = document.querySelector("#thought-field");
     const thought = document.createElement('li');
     thought.className = "list-group-item";
-    // TODO: MAKE THIS MORE SECURE - SANITIZE INPUT?
+    // TODO: MAKE THIS MORE SECURE - SANITIZE INPUT
     thought.innerHTML = String(`<span class="list-group-item-text">${thoughtText.value}</span><menu class="list-group-item-controls"><button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button><button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button></menu>`);
     // appendChild to thought group
     thoughtLog.appendChild(thought);
