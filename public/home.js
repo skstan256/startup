@@ -7,13 +7,14 @@ function setUsername() {
     usernameEl.textContent = displayUsername;
 }
 
-async function getUserData() {
-    const response = await fetch('/api/home/data');
+async function getUserProjects() {
+    const response = await fetch('/api/home/projects');
     if (response.ok) {
         userData = await response.json();
         // TODO: figure out if this needs to be in local storage
         localStorage.setItem('userData', JSON.stringify(userData));
         console.log('Received user data')
+        // TODO: FINISH - DISPLAY USER PROJECTS
     }
     else {
         // TODO: figure this part out (look at Simon's login.js)
@@ -40,7 +41,17 @@ async function createProject() {
     const projects = document.querySelector('#projects');
     projects.append(rowEl);
     name.textContent = '';
-    // add to 
+    const response = await fetch('/home/create', {
+        method: 'post',
+        body: JSON.stringify({projectName: name}),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    });
+    if (response.ok) {
+        console.log('Project sent')
+    }
+    // TODO: add a display that confirms it's been 
 }
 
 // RUN AT START

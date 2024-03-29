@@ -110,13 +110,25 @@ function setAuthCookie(res, authToken) {
   });
 }
 
-// get user data
-secureApiRouter.get('/home/data', async (req, res) => {
+// getUserProjects
+secureApiRouter.get('/home/projects', async (req, res) => {
   authToken = req.cookies[authCookieName];
-  const user = await db.getUserByToken(authToken);
-  const userData = await db.getUserData(user.userDataID);
-  console.log('Sending User Data');
-  res.send(userData);
+  if (authToken) {
+    const projectDisplays = await db.getUserProjects(authToken);
+    res.send(projectDisplays);
+    console.log('Sent User Projects');
+  }
+  else {
+    res.status(401).send({msg: 'Unauthorized'});
+  }
+  
+});
+
+// createProject
+secureApiRouter.post('/home/create', async (req, res) => {
+  const projectName = req.body.projectName;
+  authToken = req.cookies[authCookieName];
+  const projectID = await db.createProject(authToken, projectName);
 });
 
 app.listen(port, function () {

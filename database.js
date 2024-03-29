@@ -32,12 +32,6 @@ function getUserByToken(token) {
 
 
 async function createUser(username, password) {
-   // create a document containing user data
-   const userDataDoc = {
-      projects: []
-   };
-   await userData.insertOne(userDataDoc);
-   const userDataID = userDataDoc._id;
 
    // hash the password before inserting into database
    const passwordHash = await bcrypt.hash(password, 10);
@@ -45,8 +39,7 @@ async function createUser(username, password) {
    const user = {
       username: username,
       password: passwordHash,
-      userDataID: userDataID,
-      projects: [],
+      projectDisplays: [],
       token: uuid.v4(),
    };
 
@@ -55,39 +48,54 @@ async function createUser(username, password) {
    return user;
 }
 
-async function createProject(token) {
+async function createProject(token, name) {
    // get user data
-   
+   const user = getUserByToken(token)
+   // insert the project
    const projectDoc = {
+      userID: user._id,
       thoughtLog: [],
       toDoList: [],
-      reminders: []
+      reminders: [],
    };
-   // TODO: FINISH
+   await projects.insertOne(projectDoc);
+   const projectID = projectDoc._id;
+   // create project display with name
+   const projectDisplay = {
+      name: name,
+      projectID: projectID,
+   };
+   
+   await credentials.updateOne(
+      {_id: user._id},
+      { $push: {projectDisplays: projectDisplay}}
+   );
+
+   return projectID;
 }
 // TODO: figure out if checking token here would be better (more secure)
-async function getUserData(userDataID) {
-   return userData.findOne({_id: userDataID});
+//async function getUserData(userDataID) {
+   //return userData.findOne({_id: userDataID});
+//}
+
+
+
+async function getUserProjects(token) {
+   user = getUserByToken(token);
+   if (user) {
+      return user.projectDisplays;
+   }
+   
 }
 
-async function getUserDataIDByToken(token) {
 
-   return userData.findOne({_id: userDataID});
-}
-
-async function updateUserData(userDataID, newData) {
-   // TODO: maybe eventually update smarter than replacing the whole thing...
-   userData.replaceOne({_id: userDataID}, newData);
-
-}
 
 
 module.exports = {
    getUser,
    getUserByToken,
    createUser,
-   getUserData,
-   updateUserData,
    createProject,
+   getUserProjects
 }
 
