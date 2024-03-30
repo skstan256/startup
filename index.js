@@ -116,7 +116,8 @@ secureApiRouter.get('/home/projects', async (req, res) => {
   if (authToken) {
     const projectDisplays = await db.getUserProjects(authToken);
     // YOU ARE HERE: STRINGIFY PROJECT DISPLAYS?
-    res.send({projectDisplays: projectDisplays});
+    res.send(JSON.stringify({projectDisplays: projectDisplays}));
+    //res.send("test string");
     console.log('Sent User Projects');
   }
   else {
@@ -130,6 +131,11 @@ secureApiRouter.post('/home/create', async (req, res) => {
   const projectName = req.body.projectName;
   authToken = req.cookies[authCookieName];
   const projectID = await db.createProject(authToken, projectName);
+
+  if (projectID) {
+    res.send({projectID: projectID});
+  }
+  // TODO: FIGURE OUT HOW TO ERROR CHECK
 });
 
 app.listen(port, function () {
