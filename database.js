@@ -22,12 +22,12 @@ const projects = db.collection('projects');
 });
 
 
-function getUser(username) {
-   return credentials.findOne({username: username});
+async function getUser(username) {
+   return await credentials.findOne({username: username});
 }
 
-function getUserByToken(token) {
-   return credentials.findOne({token: token});
+async function getUserByToken(token) {
+   return await credentials.findOne({token: token});
 }
 
 
@@ -50,7 +50,7 @@ async function createUser(username, password) {
 
 async function createProject(token, name) {
    // get user data
-   const user = getUserByToken(token)
+   const user = await getUserByToken(token)
    // insert the project
    const projectDoc = {
       userID: user._id,
@@ -81,7 +81,7 @@ async function createProject(token, name) {
 
 
 async function getUserProjects(token) {
-   user = getUserByToken(token);
+   const user = await getUserByToken(token);
    if (user) {
       return user.projectDisplays;
    }

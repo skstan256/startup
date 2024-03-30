@@ -44,7 +44,7 @@ async function createProject() {
     name.textContent = '';
     const response = await fetch('/api/home/create', {
         method: 'post',
-        body: JSON.stringify({projectName: name}),
+        body: JSON.stringify({projectName: name.value}),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
