@@ -70,7 +70,12 @@ function addThought() {
 
 
 async function projectOnLoad() {
+    const projectID = localStorage.getItem("currProject")
+    // if no project is selected/remembered, return to the home page
+    if (!projectID) {
+        window.location.href = '/home.html'
+    }
+    
     setUsername()
     readInThoughts()
-    await demoReminder()
 }

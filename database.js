@@ -54,6 +54,7 @@ async function createProject(token, name) {
    // insert the project
    const projectDoc = {
       userID: user._id,
+      name: name,
       thoughtLog: [],
       toDoList: [],
       reminders: [],
