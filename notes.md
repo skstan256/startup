@@ -804,6 +804,22 @@ Startup:
 - `const [color, setColor] = React.useState("red");`, `onClick={changeColor}`, -- look at the simple function codepen!
 - `style={{background:color}}`
 
+## React Router
+- React makes a single page application
+- Just displays different components - component DOM injection
+- LOOK AT SLIDES FOR EXAMPLE OF REACT ROUTER
+- Uses NavLinks - `<NavLink to="/users"> Users <`
+- `npm run build`
+## Vite (pronounced 'veet')
+- LOOK AT SLIDES TO GET THE NPM COMMAND (DIFFERENT THAN THE ONES IN THE PAST)
+- ^ Run it as a peer to your folder, then copy over everything you want to keep - copy over index.html, package.json?
+- copy your current html into different components - move over one page at a time
+- FIND THE VIDEO THAT GOES THROUGH PORTING SIMON TO REACT - [bottom of this page](https://learn.cs260.click/page/essentials/simon/simon_md)
+- bring in your DOM router
+- better to debug frontend from the browser
+- have to have a vite.config.js file (code in slides) when debugging so that the frontend actually calls the backend - otherwise, when it tries to go to `/api/home` or whatever, it will try to find it on the frontend
+- have to put in the `proxy: {}` part in the vite.config.js file
+- YOU'LL HAVE A NEW DEPLOYMENT SCRIPT!
 
 
 # Deploying to Start-Up Website:
@@ -817,6 +833,7 @@ Start-Up: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s sta
 - Code Pen has debug mode
 - look into fly-cut for mac
 - the browser just loads one html page. Everything starts from there - calling cs files and JavaScript files
+- startup: do a setInternal() => 
 ```
 function setAuthCookie(res, authToken) {
   res.cookie(authCookieName, authToken, {
