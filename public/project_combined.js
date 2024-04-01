@@ -5,6 +5,7 @@ function setUsername() {
         displayUsername = "Anonymous";
     }
     usernameEl.textContent = displayUsername;
+    document.getElementById("reminderTime").defaultValue = "12:00";
 }
 
 function delay(milliseconds) {
