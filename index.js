@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const db = require('./database.js');
+const { webSocketConn } = require('./peerProxy');
 
 const authCookieName = 'token';
 
@@ -138,6 +139,8 @@ secureApiRouter.post('/home/create', async (req, res) => {
   // TODO: FIGURE OUT HOW TO ERROR CHECK
 });
 
-app.listen(port, function () {
+const httpService = app.listen(port, function () {
     console.log(`Listening on port ${port}`);
     });
+
+webSocketConn(httpService);
