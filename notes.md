@@ -776,6 +776,36 @@ OWASP 10:
 
 The line of death: the host name is the only thing you can trust (and even then it can be misleading)
 
+# React
+## Web Frameworks:
+- Simplify common patterns
+- Provide common components
+- Improve performance
+- Increase device coverage
+- They come and go over time, but right now React is going strong
+## React:
+- Came out of Instagram/Facebook
+- Jordan Walke
+- "The best drug is getting little things done that have been weighing on you. Instant high."
+- Can use a specialized form of bootstrap that works with React
+- Actually includes some security stuff
+JSX
+- combining JavaScript and HTML
+- doesn't run natively
+- you have to transpile (convert) JSX to JS using Babel
+Babel
+- can use in codepen
+Startup:
+- CSS will stay the same
+- You'll have a different run command and build command to have it transpile your code
+- Only going to have one HTML file. Have some kind of switch statement to change what happens based on the state of the user
+- Declare components - see Hello world component function codepen
+- Single page application, and you turn each one of your pages into a component. At the top level, you switch between components
+- `const [color, setColor] = React.useState("red");`, `onClick={changeColor}`, -- look at the simple function codepen!
+- `style={{background:color}}`
+
+
+
 # Deploying to Start-Up Website:
 Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
 Start-Up: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s startup`
