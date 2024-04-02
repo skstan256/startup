@@ -2,6 +2,7 @@ const {WebSocketServer} = require('ws');
 const uuid = require('uuid');
 const connections = [];
 
+// TODO: FIGURE OUT HAVING THIS ASYNC BREAKS ANYTHING
 function webSocketConn(httpServer) {
     // Create websocket object
     const wss = new WebSocketServer({noServer: true});
@@ -51,12 +52,21 @@ function webSocketConn(httpServer) {
             }
         });
     }, 10000);
+
+    // send quote
+    setInterval(async () => {
+        console.log('Getting quote...')
+        const response = await fetch('https://zenquotes.io/api/random');
+        const data = await response.json();
+        const msg = data[0].q + ' - ' + data[0].a;
+
+        connections.forEach((c) => {
+            c.ws.send(msg);
+        });
+    }, 60000);
     
 }
 
-async function sendCats() {
-    
-}
 
 
 module.exports = {webSocketConn};

@@ -5,7 +5,6 @@ function setUsername() {
         displayUsername = "Anonymous";
     }
     usernameEl.textContent = displayUsername;
-    document.getElementById("reminderTime").defaultValue = "12:00";
 }
 
 function delay(milliseconds) {
@@ -69,14 +68,37 @@ function addThought() {
 
 }
 
-
-async function projectOnLoad() {
-    const projectID = localStorage.getItem("currProject")
-    // if no project is selected/remembered, return to the home page
-    if (!projectID) {
-        window.location.href = '/home.html'
-    }
-    
-    setUsername()
-    readInThoughts()
+function displayQuote(quote) {
+    const quoteBox = document.querySelector("#quote-box");
+    quoteBox.textContent = quote;
 }
+
+function displayCat() {
+    const catBox = document.querySelector("#cat-box");
+    const catImg = document.createElement("img");
+    catImg.src = 'https://cataas.com/cat';
+    catBox.appendChild(catImg);
+}
+
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onmessage = async (quote_msg) => {
+        const quote_msg_data = quote_msg.data; // TODO: FIGURE OUT RIGHT WAY TO ACCESS DATA
+        displayQuote(quote_msg_data);
+        displayCat();
+    }
+}
+
+
+
+
+const projectID = localStorage.getItem("currProject")
+// if no project is selected/remembered, return to the home page
+if (!projectID) {
+    window.location.href = '/home.html'
+}
+
+setUsername()
+readInThoughts()
+configureWebSocket()
