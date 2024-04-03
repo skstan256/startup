@@ -820,6 +820,38 @@ Startup:
 - have to have a vite.config.js file (code in slides) when debugging so that the frontend actually calls the backend - otherwise, when it tries to go to `/api/home` or whatever, it will try to find it on the frontend
 - have to put in the `proxy: {}` part in the vite.config.js file
 - YOU'LL HAVE A NEW DEPLOYMENT SCRIPT!
+### Web Frameworks
+## Reactivity
+- Reacting to changes in the state
+- Properties to components
+- State on components
+- hook: `React.useState()`
+- every functional component returns JSX
+Two things to cause reactivity:
+- property
+- state variables
+Rendering:
+- When something related to the thing changes, it knows to re-render (but if nothing's changed, it doesn't need to update)
+Hooks:
+- useState - component state
+- useEffect - lifecycle & external events - does something when it's created or destroyed, etc. - return a destructor function that cleans up
+Rules of hooks
+- Only use them in function components (not class components)
+- Only use them at top function scope
+- No loops or conditionals to run them (can have loops and conditionals inside them)
+- Children shouldn't know anything about their parents, but sometimes you want to have the parent be notified when something happens to the child. You can pass down callback functions
+- Be careful about calling something too quick - might not be updated
+```
+React.useEffect(() => {
+    console.log('rendered' + count);
+}, []);
+# empty []: means it only runs the first time it's rendered, instead of every time it's rendered
+```
+```
+const Hello = ({name="cow"}) => {
+    
+}
+```
 
 
 # Deploying to Start-Up Website:
