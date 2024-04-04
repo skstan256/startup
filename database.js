@@ -75,6 +75,10 @@ async function createProject(token, name) {
    return projectID;
 }
 
+async function getProjectByID(projectID) {
+   return projects.findOne({_id: projectID});
+}
+
 async function addThought(projectID, thought) {
    await projects.updateOne(
       {_id: projectID},
@@ -89,10 +93,15 @@ async function getUserOfProject(projectID) {
 }
 
 async function isUserOfProject(token, projectID) {
-   const userOfToken = getUserByToken(token);
-   const projectUser = getUserOfProject(projectID);
+   const userOfToken = await getUserByToken(token);
+   const projectUser = await getUserOfProject(projectID);
 
    return (userOfToken === projectUser);
+}
+
+async function getThoughtsOfProject(projectID) {
+   let currProject = await getProjectByID(projectID);
+   return currProject.thoughtLog;
 }
 
 
@@ -112,6 +121,10 @@ module.exports = {
    getUserByToken,
    createUser,
    createProject,
-   getUserProjects
+   getUserProjects,
+   addThought,
+   isUserOfProject,
+   getProjectByID,
+   getThoughtsOfProject
 }
 
