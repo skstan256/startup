@@ -58,12 +58,12 @@ function webSocketConn(httpServer) {
         console.log('Getting quote...')
         const response = await fetch('https://zenquotes.io/api/random');
         const data = await response.json();
-        const msg = data[0].q + ' - ' + data[0].a;
+        const msg = data[0].q + '\n - ' + data[0].a;
 
         connections.forEach((c) => {
             c.ws.send(msg);
         });
-    }, 60000);
+    }, 30000);
     
 }
 

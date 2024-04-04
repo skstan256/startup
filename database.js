@@ -74,11 +74,26 @@ async function createProject(token, name) {
 
    return projectID;
 }
-// TODO: figure out if checking token here would be better (more secure)
-//async function getUserData(userDataID) {
-   //return userData.findOne({_id: userDataID});
-//}
 
+async function addThought(projectID, thought) {
+   await projects.updateOne(
+      {_id: projectID},
+      { $push: {thoughtLog: thought}}
+   );
+
+}
+
+async function getUserOfProject(projectID) {
+   const projUser = await projects.findOne({_id: projectID});
+   return projUser._id;
+}
+
+async function isUserOfProject(token, projectID) {
+   const userOfToken = getUserByToken(token);
+   const projectUser = getUserOfProject(projectID);
+
+   return (userOfToken === projectUser);
+}
 
 
 async function getUserProjects(token) {

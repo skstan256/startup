@@ -1,3 +1,11 @@
+// get the current project
+const projectID = localStorage.getItem("currProject");
+// if no project is selected/remembered, return to the home page
+if (!projectID) {
+    window.location.href = '/home.html';
+}
+
+
 function setUsername() {
     const usernameEl = document.querySelector('#usernameDisplay');
     displayUsername = localStorage.getItem('username');
@@ -73,8 +81,10 @@ function displayQuote(quote) {
     quoteBox.textContent = quote;
 }
 
+
 function displayCat() {
     const catBox = document.querySelector("#cat-box");
+    catBox.innerHTML = '';
     const catImg = document.createElement("img");
     catImg.src = 'https://cataas.com/cat';
     catBox.appendChild(catImg);
@@ -92,13 +102,7 @@ function configureWebSocket() {
 
 
 
-
-const projectID = localStorage.getItem("currProject")
-// if no project is selected/remembered, return to the home page
-if (!projectID) {
-    window.location.href = '/home.html'
-}
-
-setUsername()
-readInThoughts()
-configureWebSocket()
+setUsername();
+readInThoughts();
+configureWebSocket();
+displayCat();

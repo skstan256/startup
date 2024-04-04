@@ -139,6 +139,9 @@ secureApiRouter.post('/home/create', async (req, res) => {
   // TODO: FIGURE OUT HOW TO ERROR CHECK
 });
 
+// getThoughts
+
+
 const httpService = app.listen(port, function () {
     console.log(`Listening on port ${port}`);
     });
