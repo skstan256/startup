@@ -31,7 +31,8 @@ async function createProject() {
     });
     if (response.ok) {
         console.log('Project sent');
-        const projectID = response.body.projectID;
+        const projectID_JSON = await response.json();
+        const projectID = projectID_JSON.projectID;
         const nameEl = document.createElement('td');
         // TODO: FIGURE OUT HOW TO MAKE THIS SECURE (OR MAYBE JUST WAIT FOR REACT)
         // name.value
