@@ -114,7 +114,7 @@ function configureWebSocket() {
 }
 
 async function getProject() {
-    const response = await fetch('/api/project', {
+    const response = await fetch('/api/project/', {
         method: 'post',
         body: JSON.stringify({projectID: projectID}),
         headers: {

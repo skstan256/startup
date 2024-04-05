@@ -93,16 +93,15 @@ async function addThought(projectID, thought) {
 }
 
 async function getUserOfProject(projectID) {
-   //const formattedID = new ObjectId(projectID)
-   const projUser = await projects.findOne({projectID: formattedID});
+   const projUser = await projects.findOne({projectID: projectID});
    return projUser.userID;
 }
 
 async function isUserOfProject(token, projectID) {
    const userOfToken = await getUserByToken(token);
    const projectUserID = await getUserOfProject(projectID);
-
-   return (userOfToken._id === projectUserID);
+   const result = userOfToken._id.toString() === projectUserID.toString();
+   return result;
 }
 
 async function getThoughtsOfProject(projectID) {

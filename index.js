@@ -134,7 +134,7 @@ secureApiRouter.post('/home/create', async (req, res) => {
   const projectID = await db.createProject(authToken, projectName);
 
   if (projectID) {
-    res.send({projectID: projectID});
+    res.status(201).send({projectID: projectID});
   }
   // TODO: FIGURE OUT HOW TO ERROR CHECK
 });
@@ -143,11 +143,11 @@ secureApiRouter.post('/home/create', async (req, res) => {
 secureApiRouter.post('/project', async (req, res) => {
   const projectID = req.body.projectID;
   authToken = req.cookies[authCookieName];
-  const isOwner = db.isUserOfProject(authToken, projectID);
+  const isOwner = await db.isUserOfProject(authToken, projectID);
   if (isOwner === true) {
     const project = await db.getProjectByID(projectID);
     const projectJSON = JSON.stringify(project)
-    res.send({project: projectJSON});
+    res.status(201).send({project: projectJSON});
   }
   else {
     res.status(401).send({msg: 'Unauthorized'});
