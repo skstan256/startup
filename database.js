@@ -53,16 +53,17 @@ async function createProject(token, name) {
    // get user data
    const user = await getUserByToken(token)
    // insert the project
+   const projectIDOrig = new ObjectId();
+   const projectID = projectIDOrig.toString();
    const projectDoc = {
       userID: user._id,
-      projectID = ObjectId(),
+      projectID: projectID,
       name: name,
       thoughtLog: [],
       toDoList: [],
       reminders: [],
    };
    await projects.insertOne(projectDoc);
-   const projectID = projectDoc.projectID;
    // create project display with name
    const projectDisplay = {
       name: name,
@@ -78,14 +79,14 @@ async function createProject(token, name) {
 }
 
 async function getProjectByID(projectID) {
-   const formattedID = mongoose.Types.ObjectId(projectID);
-   return projects.findOne({_id: formattedID});
+   
+   return projects.findOne({projectID: projectID});
 }
 
 async function addThought(projectID, thought) {
-   const formattedID = mongoose.Types.ObjectId(projectID);
+   
    await projects.updateOne(
-      {_id: formattedID},
+      {projectID: projectID},
       { $push: {thoughtLog: thought}}
    );
 
@@ -93,9 +94,7 @@ async function addThought(projectID, thought) {
 
 async function getUserOfProject(projectID) {
    //const formattedID = new ObjectId(projectID)
-
-   const formattedID = new mongoose.Types.ObjectId(projectID);
-   const projUser = await projects.findOne({_id: formattedID});
+   const projUser = await projects.findOne({projectID: formattedID});
    return projUser.userID;
 }
 

@@ -49,12 +49,12 @@ async function createProject() {
         // append the row to the project list
         const projects = document.querySelector('#projects');
         projects.append(rowEl);
-
+        name.value = '';
     }
     else {
         // TODO: FIGURE OUT WHAT TO PUT HERE
     } 
-    name.textContent = '';
+    
     // TODO: add a display that confirms project has been added successfully
 }
 
