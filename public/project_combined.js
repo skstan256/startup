@@ -115,7 +115,7 @@ function configureWebSocket() {
 
 async function getProject() {
     const response = await fetch('/api/project', {
-        method: 'get',
+        method: 'post',
         body: JSON.stringify({projectID: projectID}),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
@@ -140,3 +140,4 @@ setUsername();
 //readInThoughts();
 configureWebSocket();
 displayCat();
+getProject();

@@ -1,4 +1,5 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
+const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const uuid = require('uuid');
 const config = require('./dbconfig.json');
@@ -54,13 +55,14 @@ async function createProject(token, name) {
    // insert the project
    const projectDoc = {
       userID: user._id,
+      projectID = ObjectId(),
       name: name,
       thoughtLog: [],
       toDoList: [],
       reminders: [],
    };
    await projects.insertOne(projectDoc);
-   const projectID = projectDoc._id;
+   const projectID = projectDoc.projectID;
    // create project display with name
    const projectDisplay = {
       name: name,
@@ -76,27 +78,32 @@ async function createProject(token, name) {
 }
 
 async function getProjectByID(projectID) {
-   return projects.findOne({_id: projectID});
+   const formattedID = mongoose.Types.ObjectId(projectID);
+   return projects.findOne({_id: formattedID});
 }
 
 async function addThought(projectID, thought) {
+   const formattedID = mongoose.Types.ObjectId(projectID);
    await projects.updateOne(
-      {_id: projectID},
+      {_id: formattedID},
       { $push: {thoughtLog: thought}}
    );
 
 }
 
 async function getUserOfProject(projectID) {
-   const projUser = await projects.findOne({_id: projectID});
-   return projUser._id;
+   //const formattedID = new ObjectId(projectID)
+
+   const formattedID = new mongoose.Types.ObjectId(projectID);
+   const projUser = await projects.findOne({_id: formattedID});
+   return projUser.userID;
 }
 
 async function isUserOfProject(token, projectID) {
    const userOfToken = await getUserByToken(token);
-   const projectUser = await getUserOfProject(projectID);
+   const projectUserID = await getUserOfProject(projectID);
 
-   return (userOfToken === projectUser);
+   return (userOfToken._id === projectUserID);
 }
 
 async function getThoughtsOfProject(projectID) {
