@@ -51,28 +51,41 @@ function addDemoThoughts() {
     return demoThoughts;
 }
 
-function readInThoughts() {
-    currThoughts = JSON.parse(localStorage.getItem('thoughtLog')) ?? addDemoThoughts();
-    for (const thought of currThoughts) {
+function readInThoughts(thoughts) {
+    for (const thought of thoughts) {
         loadThought(thought);
     }
 }
 
-function addThought() {
+async function addThought() {
     // select thought group
     const thoughtLog = document.querySelector("#thought-log");
     const thoughtText = document.querySelector("#thought-field");
-    const thought = document.createElement('li');
-    thought.className = "list-group-item";
-    // TODO: MAKE THIS MORE SECURE - SANITIZE INPUT
-    thought.innerHTML = String(`<span class="list-group-item-text">${thoughtText.value}</span><menu class="list-group-item-controls"><button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button><button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button></menu>`);
-    // appendChild to thought group
-    thoughtLog.appendChild(thought);
-    // save thought to local storage
-    const localThoughtLog = JSON.parse(localStorage.getItem('thoughtLog'));
-    localThoughtLog.push(thoughtText.value);
-    localStorage.setItem('thoughtLog', JSON.stringify(localThoughtLog));
-    thoughtText.value = '';
+    const response = await fetch('/api/project/thought', {
+        method: 'post',
+        body: JSON.stringify({projectID: projectID, thought: thoughtText}),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    });
+    if (response.ok) {
+        const thought = document.createElement('li');
+        thought.className = "list-group-item";
+        // TODO: MAKE THIS MORE SECURE - SANITIZE INPUT
+        thought.innerHTML = String(`<span class="list-group-item-text">${thoughtText.value}</span><menu class="list-group-item-controls"><button type="button" class="btn btn-link"><i class="bi bi-pencil-square"></i></button><button type="button" class="btn btn-link"><i class="bi bi-trash"></i></button></menu>`);
+        // appendChild to thought group
+        thoughtLog.appendChild(thought);
+        thoughtText.value = '';
+    }
+    else {
+        // if project is unauthorized, clear the projectID and return home
+        localStorage.removeItem('currProject');
+        window.location.href = '/home.html';
+    }
+    
+    
+    
+    
 
 }
 
@@ -100,9 +113,30 @@ function configureWebSocket() {
     }
 }
 
+async function getProject() {
+    const response = await fetch('/api/project', {
+        method: 'get',
+        body: JSON.stringify({projectID: projectID}),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    });
+    if (response.ok) {
+        const project = JSON.parse(response.body.project);
+        readInThoughts(project.thoughtLog);
+    }
+    else {
+        // if project is unauthorized, clear the projectID and return home
+        localStorage.removeItem('currProject');
+        window.location.href = '/home.html';
+    }
+    
+}
+
+
 
 
 setUsername();
-readInThoughts();
+//readInThoughts();
 configureWebSocket();
 displayCat();

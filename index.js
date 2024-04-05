@@ -139,8 +139,34 @@ secureApiRouter.post('/home/create', async (req, res) => {
   // TODO: FIGURE OUT HOW TO ERROR CHECK
 });
 
-// getThoughts
+// getProject
+secureApiRouter.post('/project', async (req, res) => {
+  const projectID = req.body.projectID;
+  authToken = req.cookies[authCookieName];
+  const isOwner = db.isUserOfProject(authToken, projectID);
+  if (isOwner === true) {
+    const project = await db.getProjectByID(projectID);
+    const projectJSON = JSON.stringify(project)
+    res.send({project: projectJSON});
+  }
+  else {
+    res.status(401).send({msg: 'Unauthorized'});
+  }
+});
 
+// addThought
+secureApiRouter.post('/project/thought', async (req, res) => {
+  const projectID = req.body.projectID;
+  const thought = req.body.thought;
+  authToken = req.cookies[authCookieName];
+  const isOwner = db.isUserOfProject(authToken, projectID);
+  if (isOwner === true) {
+    await db.addThought(projectID, thought);
+  }
+  else {
+    res.status(401).send({msg: 'Unauthorized'});
+  }
+});
 
 const httpService = app.listen(port, function () {
     console.log(`Listening on port ${port}`);
