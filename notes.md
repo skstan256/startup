@@ -840,7 +840,7 @@ Rules of hooks
 - Only use them at top function scope
 - No loops or conditionals to run them (can have loops and conditionals inside them)
 - Children shouldn't know anything about their parents, but sometimes you want to have the parent be notified when something happens to the child. You can pass down callback functions
-- Be careful about calling something too quick - might not be updated
+- Be careful about calling something too quick - might not be updated. From webpage: "Be careful about your assumptions of when state is updated. Just because you called updateState does not mean that you can access the updated state on the next line of code. The update happens asynchronously, and therefore you never really know when it is going to happen. You only know that it will eventually happen."
 ```
 React.useEffect(() => {
     console.log('rendered' + count);
