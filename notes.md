@@ -840,7 +840,7 @@ Rules of hooks
 - Only use them at top function scope
 - No loops or conditionals to run them (can have loops and conditionals inside them)
 - Children shouldn't know anything about their parents, but sometimes you want to have the parent be notified when something happens to the child. You can pass down callback functions
-- Be careful about calling something too quick - might not be updated
+- Be careful about calling something too quick - might not be updated. From webpage: "Be careful about your assumptions of when state is updated. Just because you called updateState does not mean that you can access the updated state on the next line of code. The update happens asynchronously, and therefore you never really know when it is going to happen. You only know that it will eventually happen."
 ```
 React.useEffect(() => {
     console.log('rendered' + count);
@@ -852,7 +852,34 @@ const Hello = ({name="cow"}) => {
     
 }
 ```
+DON'T FORGET ABOUT THE VIDEO THAT SHOWS PORTING SIMON TO REACT
 
+## PORTING:
+- create new folder services, move backend code there, move public folder there (?)
+- all backend stuff should stay the same
+- go to services directory and run npm install
+- `npm init -y`
+- install vite with npm (see special command on simon react page)
+- `npm run dev` - will bundle up code and host it. Knows how to hot reload, does the Babel translation, in temporary directory
+- In index.html file, have div with id=root and script with index.
+- In services folder a src folder with jsx
+- Can install bootstrap (npm) and then import it
+- Also need to install react react-dom react-router-dom
+- All top level code will be in app.css - header, footer, empty main (main is replaced with components?)
+- Rename the body from the original to just a div
+- Change class to className in the jsx
+- Header, footer, hole in the middle
+- JSX doesn't understand comments
+- Look at Simon code to see how to disable parts of the menu
+- replace changing window location with nav_links that will make the differennt components load
+- index.html is mostly empty, loads up index.jsx,
+- in src, different components (like for different pages of your application) all have their own folder
+- Route paths - `<Route path = ...`
+- IN DEV MODE, YOU NEED TO HAVE TWO DEBUGGERS RUNNING - ONE FRONTEND, ONE BACKEND
+- NEED TO TELL VITE TO PROXY IN A VITE.CONFIG.JS FILE - so that the frontend sends api requests to the backend
+- In production, it's not that tricky
+- in useEffect, [] as second argument means it will only run the first time
+- 
 
 # Deploying to Start-Up Website:
 Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
