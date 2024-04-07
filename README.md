@@ -74,6 +74,16 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 - [x] done - Use the `localstorage` API to keep data between pages and browser sessions: the username is stored in localstorage and persists between the home page and project page. If you were to open the program up to the home or project page in a different browser session, the username would also be persistent (going through the login page resets it). Thoughts in the thought log are also peristent. (You have to click out of the demo reminder before they load... still working on fixing that bug)
 - [x] done - Have JavaScript that mocks out the realtime data you expect to get from the server using WebSocket and inject it into the DOM: There is JavaScript that triggers when the project page is open, showing a mock example of a reminder alert.
 
+## Service Deliverable
+- [x] done - Prerequisite: I did deploy Simon Service to my production environment, but it is currently replaced with a later version of Simon (I am turning in multiple deliverables late).
+- [x] done - Create an HTTP service using Node.js and Express: Both are used (ex. in index.js)
+- [x] done - Frontend served up using Express static middleware: Used (ex. in index.js)
+- [x] done - Your frontend calls third party service endpoints: I grab quotes from a third party service in websocket.js (it's there because I use a WebSocket connection to send quotes periodically). The quote is under the "Dubious Inspiration" tab after you enter a specific project. The first quote is filler until the WebSocket pushes an outside quote through.
+- [x] done - Your backend provides service endpoints: I have endpoints in index.js for creating a user, logging in, creating a project, etc.
+- [x] done - Your frontend calls your service endpoints: I call endpoints in login.js to create and log in, etc.
+
+
+
 
 
 [Link to notes page](notes.md)
