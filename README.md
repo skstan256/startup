@@ -82,6 +82,13 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 - [x] done - Your backend provides service endpoints: I have endpoints in index.js for creating a user, logging in, creating a project, etc.
 - [x] done - Your frontend calls your service endpoints: I call endpoints in login.js to create and log in, etc.
 
+## Login Deliverable
+- [x] done - Prerequisite: I did deploy Simon Login to my production environment, but it is currently replaced with a later version of Simon (I am turning in multiple deliverables late).
+- [x] done - Supports new user registration: a new user is created (if the username isn't taken) when credentials are put in and the sign-up button is pressed
+- [x] done - Supports existing user authentication: users can log in and out with credentials (and logging in fails with incorrect credentials)
+- [x] done - Stores application data in MongoDB: user projects and thought logs are stored in MongoDB
+- [x] done - Stores and retrieves credentials in MongoDB: usernames and passwords are stored and retrieved from MongoDB
+- [x] done - Restricts application functionality based upon authentication: if a user is not authenticated and tries to access the home or project page, they are redirected back to the login page.
 
 
 
