@@ -90,6 +90,13 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 - [x] done - Stores and retrieves credentials in MongoDB: usernames and passwords are stored and retrieved from MongoDB
 - [x] done - Restricts application functionality based upon authentication: if a user is not authenticated and tries to access the home or project page, they are redirected back to the login page.
 
+## WebSocket Deliverable:
+- [x] done - Prerequisite: Websocket Simon deployed to production environment
+- [x] done - Backend listens for WebSocket connection: listens in websocket.js
+- [x] done - Frontend makes WebSocket connection: makes a connection from project_combined.js
+- [x] done - Data sent over WebSocket connection: quotes are sent across the WebSocket connection periodically
+- [x] done - WebSocket data displayed in the application interface: the quotes are displayed under the "Dubious Inspiration" page (after you create and click on a project). The first quote is filler until the next round of WebSocket quotes are sent out to everyone.
+
 
 
 
