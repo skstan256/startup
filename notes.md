@@ -879,7 +879,33 @@ DON'T FORGET ABOUT THE VIDEO THAT SHOWS PORTING SIMON TO REACT
 - NEED TO TELL VITE TO PROXY IN A VITE.CONFIG.JS FILE - so that the frontend sends api requests to the backend
 - In production, it's not that tricky
 - in useEffect, [] as second argument means it will only run the first time
-- 
+
+# TypeScript:
+- can specify argument types and return types
+- has to be compiled to JavaScript; not built into JavaScript
+- you can define your own data types, and then it knows what attributes the object has
+Unions:
+- `type AuthState = 'authenticated' | 'unauthenticated';`
+- `let auth: AuthState = 'authenticated';`
+
+# Performance:
+- Optimize for real usage - measure cache, bandwidth, cpu, storage on the worst devices
+- Optimize based on data from users
+- prioritize bottlenecks
+- Look at download size
+- Compress, reduce, minify
+- Lazy load - only load what the user is looking at right now
+- Use psychology - have stuff that the user can look at while the site is loading
+## Lighthouse
+- Run from the Inspect page on a website
+- Tells you how good your website is with best practices, accessibility, etc.
+## Speed from Different Areas of the World
+- tools.pingdom.com
+- dotcom-tools.com/website-speed-test
+## Throttled Speed
+- You can test how fast your website goes for a slower speed (from Inspect under Network)
+## Record
+- from Inspect under Performance, you can record a few seconds of usage and see the calls and what the page looks like
 
 # Deploying to Start-Up Website:
 Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
