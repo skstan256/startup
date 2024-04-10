@@ -907,6 +907,49 @@ Unions:
 ## Record
 - from Inspect under Performance, you can record a few seconds of usage and see the calls and what the page looks like
 
+## Design (UI)
+- Simplicity - reduce cognitive load
+- Tell a story
+- Consistency - you can be jarring if you're better, but otherwise, you get old. Use a UI framework (Material.io, Tailwind, Bootstrap).
+- Sitemap - what are the prime things they want to do, the secondary things they want to do? What do they expect to see first?
+- Display location (where am I?)
+- Browser controls
+- Breadcrumbs
+- Anticipate common paths - make it so your user can get to commonly used pages easily
+- Fonts, generally: the less fonts, the better
+- Proofread!
+- Use standard icons
+- Use space
+- Interactions
+- Images: must add value
+- Animations
+- Decision fatigue - Hick's Law: the time necessary to make a decision increases logarithmically with the number of choices
+- Be aware of devices
+### Accessibility
+Visual:
+- High contrast theme
+- Screen reader support
+Audio:
+- Closed caption
+- Visual animation
+Physical:
+- Keyboard navigation
+### Legal
+- Compliance for different types of information
+### Walls
+- Registration
+- Payment
+- Login
+- Navigation - have to click too many times
+- Legal
+### Internationalization
+- Language
+- Currency
+- Times and dates
+- Numbers
+- Icons
+- Images
+
 # Deploying to Start-Up Website:
 Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
 Start-Up: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s startup`
