@@ -879,7 +879,76 @@ DON'T FORGET ABOUT THE VIDEO THAT SHOWS PORTING SIMON TO REACT
 - NEED TO TELL VITE TO PROXY IN A VITE.CONFIG.JS FILE - so that the frontend sends api requests to the backend
 - In production, it's not that tricky
 - in useEffect, [] as second argument means it will only run the first time
-- 
+
+# TypeScript:
+- can specify argument types and return types
+- has to be compiled to JavaScript; not built into JavaScript
+- you can define your own data types, and then it knows what attributes the object has
+Unions:
+- `type AuthState = 'authenticated' | 'unauthenticated';`
+- `let auth: AuthState = 'authenticated';`
+
+# Performance:
+- Optimize for real usage - measure cache, bandwidth, cpu, storage on the worst devices
+- Optimize based on data from users
+- prioritize bottlenecks
+- Look at download size
+- Compress, reduce, minify
+- Lazy load - only load what the user is looking at right now
+- Use psychology - have stuff that the user can look at while the site is loading
+## Lighthouse
+- Run from the Inspect page on a website
+- Tells you how good your website is with best practices, accessibility, etc.
+## Speed from Different Areas of the World
+- tools.pingdom.com
+- dotcom-tools.com/website-speed-test
+## Throttled Speed
+- You can test how fast your website goes for a slower speed (from Inspect under Network)
+## Record
+- from Inspect under Performance, you can record a few seconds of usage and see the calls and what the page looks like
+
+## Design (UI)
+- Simplicity - reduce cognitive load
+- Tell a story
+- Consistency - you can be jarring if you're better, but otherwise, you get old. Use a UI framework (Material.io, Tailwind, Bootstrap).
+- Sitemap - what are the prime things they want to do, the secondary things they want to do? What do they expect to see first?
+- Display location (where am I?)
+- Browser controls
+- Breadcrumbs
+- Anticipate common paths - make it so your user can get to commonly used pages easily
+- Fonts, generally: the less fonts, the better
+- Proofread!
+- Use standard icons
+- Use space
+- Interactions
+- Images: must add value
+- Animations
+- Decision fatigue - Hick's Law: the time necessary to make a decision increases logarithmically with the number of choices
+- Be aware of devices
+### Accessibility
+Visual:
+- High contrast theme
+- Screen reader support
+Audio:
+- Closed caption
+- Visual animation
+Physical:
+- Keyboard navigation
+### Legal
+- Compliance for different types of information
+### Walls
+- Registration
+- Payment
+- Login
+- Navigation - have to click too many times
+- Legal
+### Internationalization
+- Language
+- Currency
+- Times and dates
+- Numbers
+- Icons
+- Images
 
 # Deploying to Start-Up Website:
 Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
