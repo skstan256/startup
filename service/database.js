@@ -2,7 +2,7 @@ const { MongoClient, ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const uuid = require('uuid');
-const config = require('../dbconfig.json');
+const config = require('./dbconfig.json');
 
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
 const client = new MongoClient(url);
