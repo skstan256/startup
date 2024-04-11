@@ -950,6 +950,18 @@ Physical:
 - Icons
 - Images
 
+# Vite:
+- `npm run dev`
+- `o` to open in browser, `q` to quit in browser
+Terminal One:
+npm run dev
+
+Terminal Two:
+cd service
+node index.js
+--OR--
+If you want to use breakpoints, select index.js and run debug as normal
+
 # Deploying to Start-Up Website:
 Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
 Start-Up: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s startup`
