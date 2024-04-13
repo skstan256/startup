@@ -962,6 +962,24 @@ node index.js
 --OR--
 If you want to use breakpoints, select index.js and run debug as normal
 
+# Progressive Web Application
+"There is awesomeness out there and you are an integral part of it." - Lee Jensen
+- 2007 - Native apps - app store, certification, rev share, different for each device platform - plus you still need to do websites - like three teams (Apple, Android, web)
+- Enter cross compiling - react native to react-router-native and react-router-dom, and have one-ish code base (but there's still tiny things that don't work)
+- Special code for targets, multiple distribution paths, app store hurdles - but you can utilize unique device features
+Progressive Web Application:
+- Browser stuff works on everything - so target that
+- One code base, smaller than native, one distribution with easy updates, no app store (approval, installation or fees), works offline, advanced caching, native like experience
+- Your distribution is a website, but it works offline and works like a native app
+- You go to the website in a browser first to download the progressive web app, and then it runs basically like a native app
+- Ex. spotify - open.spotify.com
+- They can still access features like bio identification, etc.
+How to Implement:
+- Manifest - json file that shows how stuff should be displayed
+- Icons
+- Service worker - there's one thread that does all the application rendering, and another (this one, the service worker) that does background tasks, like caching
+- Offline fallbacks
+
 # Deploying to Start-Up Website:
 Simon: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s simon`
 Start-Up: `./deployService.sh -k /Users/sarah/cs260.pem -h webbrain.click -s startup`
