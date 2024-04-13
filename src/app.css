@@ -12,11 +12,18 @@
 
 header {
     flex: 0 80px;
-   
+}
+
+.navbar-brand {
+    padding-left: 0.5em;
+}
+
+.navbar-nav {
+    padding-right: 1em;
 }
 
 main {
-    flex: 1 calc(100vh - 160px);
+    flex: 1 calc(100vh - 170px);
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
@@ -37,6 +44,9 @@ menu {
     /*  overwrite Bootstrap so the menu does not wrap */
     flex-direction: row !important;
     list-style: none;
+}
+menu .nav-item {
+    padding: 0 0.3em;
 }
 
 .list-group-item {

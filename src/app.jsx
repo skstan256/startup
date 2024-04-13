@@ -8,7 +8,7 @@ export default function App() {
         <header className='container-fluid'>
           <nav className='navbar fixed-top navbar-dark'>
             <div className='navbar-brand'>
-              Simon<sup>&reg;</sup>
+              Web-Brain
             </div>
             <menu className='navbar-nav'>
               <li className='nav-item'>
@@ -17,18 +17,13 @@ export default function App() {
                 </a>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href='play.html'>
-                  Play
+                <a className='nav-link' href='project.html'>
+                  Project
                 </a>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href='scores.html'>
-                  Scores
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link' href='about.html'>
-                  About
+                <a className='nav-link' href='index.html'>
+                  Auth
                 </a>
               </li>
             </menu>
