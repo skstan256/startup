@@ -97,7 +97,12 @@ Nudge yourself to do tasks after a certain amount of time, or when you pause/end
 - [x] done - Data sent over WebSocket connection: quotes are sent across the WebSocket connection periodically
 - [x] done - WebSocket data displayed in the application interface: the quotes are displayed under the "Dubious Inspiration" page (after you create and click on a project). The first quote is filler until the next round of WebSocket quotes are sent out to everyone.
 
-
+## React Deliverable:
+- [x] done - Prerequisite: React Simon deployed to production environment
+- [x] done - bundled using Vite
+- [] Did not get my React components functional :(
+- [x] done - React router (can navigate between pages)
+- [x] kind of done - an example of React hooks on the login page
 
 
 [Link to notes page](notes.md)
