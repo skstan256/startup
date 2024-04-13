@@ -7,7 +7,7 @@ import { Home } from './home/home';
 import { Project } from './project/project';
 
 
-export default function App() {
+function App() {
     return (
         <BrowserRouter>
             <div className='body bg-dark text-light'>
@@ -36,9 +36,14 @@ export default function App() {
                 </nav>
                 </header>
 
-                
+                <Routes>
+                    <Route path='/' element={<Login />} />
+                    <Route path='/home' element={<Home />} />
+                    <Route path='/project' element={<Project />} />
+                    <Route path='/*' element={<NotFound />} />
+                </Routes>
         
-                <main>App components go here</main>
+                
         
                 <footer className='bg-dark text-white-50'>
                 <div className='container-fluid'>
@@ -55,3 +60,9 @@ export default function App() {
         </BrowserRouter>
     );
 }
+
+function NotFound() {
+    return <main className='container-fluid text-center'>404: Address unknown</main>;
+}
+
+export default App;
