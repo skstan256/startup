@@ -1,0 +1,125 @@
+/* TODO: make sure to add some sort of container to components to use #login-body, etc. */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+.body {
+    font-family: Lexend;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+header {
+    flex: 0 80px;
+   
+}
+
+main {
+    flex: 1 calc(100vh - 160px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer {
+    flex: 0 80px;
+}
+
+td {
+    vertical-align: middle
+}
+
+
+menu {
+    list-style-type: none;
+    display: flex;
+    /*  overwrite Bootstrap so the menu does not wrap */
+    flex-direction: row !important;
+    list-style: none;
+}
+
+.list-group-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    justify-content: right;
+}
+
+.list-group-item-text {
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    justify-content: right;
+}
+
+
+
+#work-session {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+#work-session-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+#login-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+#login-form {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    gap: 10px;
+}
+
+#login-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    gap: 10px;
+}
+
+
+
+#index-body {
+    display: flex;
+    flex-direction: column;
+}
+#index-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    justify-content: center;
+}
+.login-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
