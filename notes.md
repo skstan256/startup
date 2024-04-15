@@ -1003,6 +1003,24 @@ function setAuthCookie(res, authToken) {
 ## Misc. MongoDB Notes
 - Can open a JavaScript debug terminal in VS Code, then run `node <filename>`
 
+# Final Review
+request          Express middleware
+method: delete -> app.delete()
 
+- you can use fetch in front-end and back-end code
+- (in the back-end, you could get 3rd party content through fetch requests)
+- port 80 is reserved for HTTP
+- HTTPS: 443
+- SSH: 22
+- if react Route has `exact` keyword, only matches exact
+- Standard HTTP headers: cookie, content-type, host
+- host is what you made the request from
+- NOT standard HTTP header: language - that's an attribute in your HTML
+Purpose of JSX:
+- NOT to combine CSS, HTML, and JavaScript
+- to componentize your HTML
+- to render HTML from JavaScript
+- to allow for composability of your HTML
+- 
 
 
