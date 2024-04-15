@@ -1021,6 +1021,37 @@ Purpose of JSX:
 - to componentize your HTML
 - to render HTML from JavaScript
 - to allow for composability of your HTML
-- 
+Linux Daemon:
+- can fork other processes
+- PM2 is an example of daemon
+- executes independent of a user
+- starts automatically when the computer is rebooted
+NPM install ws:
+- (WebSocket)
+- Locks the version of the websocket package for your application
+- Adds websocket source code to the node_modules directory
+- Adds a dependency to your package
+Express middleware:
+- app.use() - will execute every time
+- has to call next(); otherwise it would stop there
+- if next(); is called in everything, it keeps going through everything that matches
+- has to send at the end, otherwise it freezes
+WebSocket:
+- peer to peer instead of client to server - either one of the peers can send data (so it's still the same client and server, but now they can send stuff back and forth)
+Cookies allow:
+- a server to store data on the client
+HTTP Status Codes:
+- 300: content redirect or caching
+- 200: Success
+- 400: front-end made a bad request
+- 500: server errors (database is down, etc.)
+Hashing stored passwords:
+- improves security
+React:
+- useEffect runs when component is first initialized
+Mongo:
+`$or` means either one can match
+`$lt` means less than (numerically)
+case sensitive!
 
 
