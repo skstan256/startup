@@ -1055,3 +1055,30 @@ Mongo:
 case sensitive!
 
 
+- React uses JSX
+- JSX -> goes through preprocessor Babel -> converted to JavaScript
+```
+# JSX
+<div> Component: <Demo who="Walke"/> </div>
+
+# Corresponding React component:
+function Demo(props) {
+    const who = 'world';
+    return <b>Hello {props.who}</b>;
+}
+
+# Resulting HTML
+<div> Component: <b>Hello Walke</b></div>
+```
+
+```
+const Clicker = () => {
+    const [clicked, updateClicked] = React.useState(false);
+}
+```
+
+`const [color, setColor] = React.useState(initialColor);`
+useState returns:
+1. The current state - during the first render, it will match the initialState (ex. initialColor) passed in
+2. a set function that will let you update the state (you can call it later)
+
